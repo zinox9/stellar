@@ -1,0 +1,202 @@
+.header {
+   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("../../images/hero-bg.jpg");
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+   height: 110vh;
+
+   &__nav {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 5.5rem 0rem;
+      width: 100%;
+   }
+
+   &__head {
+      display: flex;
+   }
+
+   &__logo {
+      margin-right: 7rem;
+      display: inline-block;
+      img {
+         width: 13rem;
+         height: auto;
+      }
+   }
+
+   &__nav-list {
+      padding-top: 0.2rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      li {
+         margin: 0 1.2rem;
+      }
+   }
+
+   &__nav-link {
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+      font-size: 1.15rem;
+      line-height: 0.4px;
+      color: $color-grey;
+      text-decoration: none;
+      transition: color 0.3s ease-in;
+
+      &:hover,
+      &:active {
+         color: $color-white;
+      }
+
+      &.--active {
+         color: $color-white;
+      }
+   }
+
+   &__main {
+      display: grid;
+      margin-top: 7rem;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas:
+         "heading video"
+         "button button";
+   }
+   &__heading {
+      font-size: 6rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: $color-white;
+      grid-area: heading;
+      width: 90%;
+   }
+
+   &__video {
+      grid-area: video;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      p {
+         font-weight: 800;
+         text-transform: uppercase;
+         letter-spacing: 0.3rem;
+         font-size: 1.35rem;
+         line-height: 0.4px;
+         color: $color-grey;
+         transition: color 0.3s ease-in;
+      }
+
+      &:hover &-logo,
+      &:active &-logo {
+         background-color: $color-main;
+         transition: background-color 0.3s ease-out;
+      }
+
+      &:hover p,
+      &:active p {
+         color: $color-white;
+         transition: color 0.3s ease-out;
+      }
+   }
+
+   &__video-logo {
+      width: 2rem;
+      height: 2rem;
+      padding: 4.2rem;
+      margin-bottom: 2.5rem;
+      background-color: rgba($color-grey, 0.25);
+      border-radius: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition: background-color 0.3s ease-in;
+
+      img {
+         width: 2.4rem;
+         height: auto;
+      }
+   }
+
+   &__button {
+      margin-top: 5rem;
+      grid-area: button;
+   }
+
+   &__social {
+      position: absolute;
+      right: 0%;
+      top: 7%;
+      margin-top: 2rem;
+      height: 20rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 2rem;
+      width: 2rem;
+      list-style: none;
+   }
+
+   &__social-link {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      height: 0.1rem;
+      i {
+         margin: auto;
+         width: 2rem;
+         color: $color-white;
+      }
+
+      &:hover .header__social-text {
+         font-size: 1.2rem;
+         background-color: rgba($color-darkGrey, 1);
+
+         transition: font-size 0.4s ease-out;
+      }
+   }
+
+   &__social-text {
+      color: $color-main;
+      font-size: 0;
+      padding: 1rem;
+      margin-right: 3rem;
+      background-color: rgba(0, 0, 0, 0);
+      transition: font-size 0.4s ease-in;
+   }
+
+   &__scroll {
+      position: absolute;
+      bottom: 10%;
+      right: -2%;
+      color: $color-white;
+      font-size: 1.2rem;
+      letter-spacing: 4px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transform: rotate(-90deg);
+      cursor: pointer;
+
+      &::after {
+         content: " ";
+         display: inline-block;
+         position: absolute;
+         top: 50%;
+         margin-left: 5rem;
+         height: 1px;
+         width: 15rem;
+         background-color: rgba($color-grey, 0.5);
+      }
+   }
+}

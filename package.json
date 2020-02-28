@@ -1,0 +1,29 @@
+{
+   "name": "stellar",
+   "version": "1.0.0",
+   "description": "Recreated template",
+   "main": "index.js",
+   "browserslist": [
+      "last 10 versions",
+      "cover 99.5%",
+      "not dead"
+   ],
+   "scripts": {
+      "watch:sass": "sass --watch ./sass/main.scss ./css/style.css ",
+      "devserver": "live-server --wait=200",
+      "start": "concurrently npm:watch:sass npm:devserver",
+      "compile:sass": "sass ./sass/main.scss ./css/style.comp.css",
+      "prefix:css": "postcss ./css/style.comp.css --use autoprefixer -b browserslist -o ./css/style.prefix.css",
+      "compress:css": "sass ./css/style.prefix.css ./css/style.css --output-style compressed"
+   },
+   "author": "Arjun",
+   "license": "ISC",
+   "devDependencies": {
+      "autoprefixer": "^9.7.4",
+      "concat": "^1.0.3",
+      "concurrently": "^5.1.0",
+      "live-server": "^1.2.1",
+      "postcss-cli": "^7.1.0",
+      "sass": "^1.26.1"
+   }
+}
