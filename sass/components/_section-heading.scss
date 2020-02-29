@@ -1,0 +1,25 @@
+.section-heading {
+   font-size: 1.7rem;
+   text-transform: uppercase;
+   width: 50%;
+   color: $color-main;
+   letter-spacing: 1.8px;
+
+   p {
+      display: inline-block;
+   }
+
+   p:first-child {
+      font-weight: 700;
+      font-size: 1.6rem;
+
+      &::after {
+         content: " ";
+         display: inline-block;
+         width: 4.5rem;
+         height: 0.5px;
+         background-color: $color-main;
+         margin: 0.5rem 1.5rem;
+      }
+   }
+}

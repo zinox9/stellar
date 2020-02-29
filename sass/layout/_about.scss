@@ -1,0 +1,65 @@
+.about {
+   padding: 17rem 10rem;
+
+   &__text {
+      margin-top: 5rem;
+      margin-left: 11rem;
+
+      h3 {
+         font-size: 4.5rem;
+         font-weight: 500;
+         line-height: 1.5;
+      }
+
+      p {
+         font-family: "Merriweather", serif;
+         font-size: 2.4rem;
+         font-weight: 300;
+         margin-top: 3rem;
+         line-height: 1.8;
+         color: rgba($color-grey, 0.8);
+      }
+   }
+
+   &__details {
+      display: grid;
+      // font-size: 2.4rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+         "detail-1 detail-2"
+         "detail-3 detail-4";
+      margin-top: 9rem;
+      grid-gap: 5rem;
+   }
+
+   &__detail {
+      display: grid;
+      grid-template-columns: 15% 85%;
+      grid-template-rows: 1fr 2fr;
+      grid-template-areas:
+         "icon name"
+         "detail detail";
+
+      img {
+         grid-area: icon;
+         align-self: center;
+      }
+      h4 {
+         grid-area: name;
+         justify-self: start;
+         align-self: center;
+         font-weight: 500;
+         font-size: 2.7rem;
+      }
+      p {
+         margin-top: 1.7rem;
+         grid-area: detail;
+         font-family: "Merriweather", serif;
+         font-size: 1.8rem;
+         line-height: 1.8;
+         font-weight: 400;
+         color: rgba($color-darkGrey, 0.8);
+      }
+   }
+}

@@ -1,5 +1,10 @@
 @import "./abstracts/variables";
+
 @import "./base/reset";
-@import "./components/header";
+
 @import "./components/buttons";
+@import "./components/section-heading";
+
+@import "./layout/header";
+@import "./layout/about";
 @import "./layout/container";

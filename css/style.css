@@ -14,6 +14,74 @@ body {
   /* Define project wide font family and size in body selector */
 }
 
+.btn-main {
+  width: 27rem;
+  padding: 2.3rem 4rem;
+  border: 2px solid #eb6222;
+  position: relative;
+  z-index: 5;
+}
+.btn-main p {
+  position: relative;
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  z-index: 15;
+}
+.btn-main img {
+  display: inline-block;
+  width: 2rem;
+  height: auto;
+  position: absolute;
+  right: 4rem;
+  z-index: 15;
+  transition: right 0.15s ease-in;
+}
+.btn-main::before {
+  content: " ";
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #eb6222;
+  z-index: 5;
+  transition: width 0.15s ease-in;
+}
+.btn-main:hover img, .btn-main:active img {
+  right: 3rem;
+}
+.btn-main:hover::before, .btn-main:active::before {
+  width: 100%;
+}
+
+.section-heading {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  width: 50%;
+  color: #eb6222;
+  letter-spacing: 1.8px;
+}
+.section-heading p {
+  display: inline-block;
+}
+.section-heading p:first-child {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.section-heading p:first-child::after {
+  content: " ";
+  display: inline-block;
+  width: 4.5rem;
+  height: 0.5px;
+  background-color: #eb6222;
+  margin: 0.5rem 1.5rem;
+}
+
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../../images/hero-bg.jpg");
   background-size: cover;
@@ -187,49 +255,59 @@ body {
   background-color: rgba(128, 128, 128, 0.5);
 }
 
-.btn-main {
-  width: 27rem;
-  padding: 2.3rem 4rem;
-  border: 2px solid #eb6222;
-  position: relative;
-  z-index: 5;
+.about {
+  padding: 17rem 10rem;
 }
-.btn-main p {
-  position: relative;
-  color: white;
-  font-size: 1.3rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  display: inline-block;
-  z-index: 15;
+.about__text {
+  margin-top: 5rem;
+  margin-left: 11rem;
 }
-.btn-main img {
-  display: inline-block;
-  width: 2rem;
-  height: auto;
-  position: absolute;
-  right: 4rem;
-  z-index: 15;
-  transition: right 0.15s ease-in;
+.about__text h3 {
+  font-size: 4.5rem;
+  font-weight: 500;
+  line-height: 1.5;
 }
-.btn-main::before {
-  content: " ";
-  position: absolute;
-  display: inline-block;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 0%;
-  background-color: #eb6222;
-  z-index: 5;
-  transition: width 0.15s ease-in;
+.about__text p {
+  font-family: "Merriweather", serif;
+  font-size: 2.4rem;
+  font-weight: 300;
+  margin-top: 3rem;
+  line-height: 1.8;
+  color: rgba(128, 128, 128, 0.8);
 }
-.btn-main:hover img, .btn-main:active img {
-  right: 3rem;
+.about__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "detail-1 detail-2" "detail-3 detail-4";
+  margin-top: 9rem;
+  grid-gap: 5rem;
 }
-.btn-main:hover::before, .btn-main:active::before {
-  width: 100%;
+.about__detail {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas: "icon name" "detail detail";
+}
+.about__detail img {
+  grid-area: icon;
+  align-self: center;
+}
+.about__detail h4 {
+  grid-area: name;
+  justify-self: start;
+  align-self: center;
+  font-weight: 500;
+  font-size: 2.7rem;
+}
+.about__detail p {
+  margin-top: 1.7rem;
+  grid-area: detail;
+  font-family: "Merriweather", serif;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: rgba(21, 21, 21, 0.8);
 }
 
 .container {
