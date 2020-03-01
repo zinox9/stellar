@@ -50,3 +50,19 @@
       }
    }
 }
+
+.btn-sec {
+   color: $color-black;
+   background-color: $color-white;
+   padding: 1rem 1rem;
+   text-decoration: none;
+   font-size: 1.3rem;
+   transition: all 0.25s ease-in;
+
+   &:hover,
+   &:active {
+      background-color: $color-main;
+      color: $color-white;
+      transition: all 0.25s ease-out;
+   }
+}
