@@ -103,7 +103,7 @@
       &:hover p,
       &:active p {
          color: $color-white;
-         transition: color 0.3s ease-out;
+         transition: color 0.25s ease-out;
       }
    }
 
@@ -119,7 +119,7 @@
       align-items: center;
       justify-content: center;
 
-      transition: background-color 0.3s ease-in;
+      transition: background-color 0.25s ease-in;
 
       img {
          width: 2.4rem;
@@ -163,7 +163,7 @@
          font-size: 1.2rem;
          background-color: rgba($color-darkGrey, 1);
 
-         transition: font-size 0.4s ease-out;
+         transition: font-size 0.25s ease-out;
       }
    }
 
@@ -173,7 +173,7 @@
       padding: 1rem;
       margin-right: 3rem;
       background-color: rgba(0, 0, 0, 0);
-      transition: font-size 0.4s ease-in;
+      transition: font-size 0.25s ease-in;
    }
 
    &__scroll {

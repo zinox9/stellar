@@ -38,7 +38,7 @@ body {
   position: absolute;
   right: 4rem;
   z-index: 15;
-  transition: right 0.15s ease-in;
+  transition: right 0.25s ease-in;
 }
 .btn-main::before {
   content: " ";
@@ -50,7 +50,7 @@ body {
   width: 0%;
   background-color: #eb6222;
   z-index: 5;
-  transition: width 0.15s ease-in;
+  transition: width 0.25s ease-in;
 }
 .btn-main:hover img, .btn-main:active img {
   right: 3rem;
@@ -59,27 +59,47 @@ body {
   width: 100%;
 }
 
-.section-heading {
+.section__heading {
   font-size: 1.7rem;
   text-transform: uppercase;
   width: 50%;
   color: #eb6222;
   letter-spacing: 1.8px;
 }
-.section-heading p {
+.section__heading p {
   display: inline-block;
 }
-.section-heading p:first-child {
+.section__heading p:first-child {
   font-weight: 700;
   font-size: 1.6rem;
 }
-.section-heading p:first-child::after {
+.section__heading p:first-child::after {
   content: " ";
   display: inline-block;
   width: 4.5rem;
   height: 0.5px;
   background-color: #eb6222;
   margin: 0.5rem 1.5rem;
+}
+.section__text {
+  margin-top: 5rem;
+  margin-left: 11rem;
+}
+.section__text-main {
+  font-size: 4.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.section__text-main.--invert {
+  color: white;
+}
+.section__text-sub {
+  font-family: "Merriweather", serif;
+  font-size: 2.4rem;
+  font-weight: 300;
+  margin-top: 3rem;
+  line-height: 1.8;
+  color: gray;
 }
 
 .header {
@@ -171,7 +191,7 @@ body {
 }
 .header__video:hover p, .header__video:active p {
   color: white;
-  transition: color 0.3s ease-out;
+  transition: color 0.25s ease-out;
 }
 .header__video-logo {
   width: 2rem;
@@ -183,7 +203,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease-in;
+  transition: background-color 0.25s ease-in;
 }
 .header__video-logo img {
   width: 2.4rem;
@@ -222,7 +242,7 @@ body {
 .header__social-link:hover .header__social-text {
   font-size: 1.2rem;
   background-color: #151515;
-  transition: font-size 0.4s ease-out;
+  transition: font-size 0.25s ease-out;
 }
 .header__social-text {
   color: #eb6222;
@@ -230,7 +250,7 @@ body {
   padding: 1rem;
   margin-right: 3rem;
   background-color: rgba(0, 0, 0, 0);
-  transition: font-size 0.4s ease-in;
+  transition: font-size 0.25s ease-in;
 }
 .header__scroll {
   position: absolute;
@@ -257,23 +277,6 @@ body {
 
 .about {
   padding: 17rem 10rem;
-}
-.about__text {
-  margin-top: 5rem;
-  margin-left: 11rem;
-}
-.about__text h3 {
-  font-size: 4.5rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
-.about__text p {
-  font-family: "Merriweather", serif;
-  font-size: 2.4rem;
-  font-weight: 300;
-  margin-top: 3rem;
-  line-height: 1.8;
-  color: rgba(128, 128, 128, 0.8);
 }
 .about__details {
   display: grid;
@@ -308,6 +311,45 @@ body {
   line-height: 1.8;
   font-weight: 400;
   color: rgba(21, 21, 21, 0.8);
+}
+
+.services {
+  padding: 17rem 10rem;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/services-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.services * {
+  position: relative;
+}
+.services__list {
+  margin-top: 10rem;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "item-1 item-2 item-3" "item-4 item-5 item-6";
+  grid-gap: 4rem 4rem;
+}
+.services__list-item h2 {
+  font-size: 4.5rem;
+  font-family: "Merriweather", serif;
+  font-weight: 800;
+  color: #eb6222;
+}
+.services__list-item h3 {
+  font-size: 2.3rem;
+  font-weight: 400;
+  margin: 4rem 0 3rem 0;
+}
+.services__list-item p {
+  font-size: 1.7rem;
+  font-family: "Merriweather", serif;
+  color: gray;
+  line-height: 2;
 }
 
 .container {

@@ -1,29 +1,8 @@
 .about {
    padding: 17rem 10rem;
 
-   &__text {
-      margin-top: 5rem;
-      margin-left: 11rem;
-
-      h3 {
-         font-size: 4.5rem;
-         font-weight: 500;
-         line-height: 1.5;
-      }
-
-      p {
-         font-family: "Merriweather", serif;
-         font-size: 2.4rem;
-         font-weight: 300;
-         margin-top: 3rem;
-         line-height: 1.8;
-         color: rgba($color-grey, 0.8);
-      }
-   }
-
    &__details {
       display: grid;
-      // font-size: 2.4rem;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       grid-template-areas:

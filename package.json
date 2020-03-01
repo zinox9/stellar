@@ -7,7 +7,7 @@
       "last 10 versions",
       "cover 99.5%",
       "not dead"
-   ],
+   ], 
    "scripts": {
       "watch:sass": "sass --watch ./sass/main.scss ./css/style.css ",
       "devserver": "live-server --wait=200",

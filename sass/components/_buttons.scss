@@ -23,7 +23,7 @@
       position: absolute;
       right: 4rem;
       z-index: 15;
-      transition: right 0.15s ease-in;
+      transition: right 0.25s ease-in;
    }
 
    &::before {
@@ -36,7 +36,7 @@
       width: 0%;
       background-color: $color-main;
       z-index: 5;
-      transition: width 0.15s ease-in;
+      transition: width 0.25s ease-in;
    }
 
    &:hover,
