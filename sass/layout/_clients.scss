@@ -2,9 +2,10 @@
    background-color: $color-lightBlack;
 
    &__grid {
-      margin: 20rem auto 0;
+      // margin: 10rem auto 0;
+      margin-top: 10rem;
       display: grid;
-      grid-template-rows: 30rem 30rem;
+      grid-template-rows: 25rem 25rem;
       grid-template-columns: repeat(4, 1fr);
 
       div {
@@ -15,6 +16,8 @@
 
          img {
             width: 13rem;
+            transition: transform 0.2s linear;
+            cursor: pointer;
          }
 
          &:nth-child(n + 1):nth-child(-n + 4) {
@@ -33,6 +36,10 @@
          &:nth-child(4),
          &:nth-child(8) {
             border-right: none;
+         }
+
+         &:hover img {
+            transform: scale(1.2);
          }
       }
    }

@@ -549,9 +549,9 @@ body {
   background-color: #2a2a2a;
 }
 .clients__grid {
-  margin: 20rem auto 0;
+  margin-top: 10rem;
   display: grid;
-  grid-template-rows: 30rem 30rem;
+  grid-template-rows: 25rem 25rem;
   grid-template-columns: repeat(4, 1fr);
 }
 .clients__grid div {
@@ -562,6 +562,8 @@ body {
 }
 .clients__grid div img {
   width: 13rem;
+  transition: transform 0.2s linear;
+  cursor: pointer;
 }
 .clients__grid div:nth-child(n+1):nth-child(-n+4) {
   border-top: none;
@@ -574,6 +576,35 @@ body {
 }
 .clients__grid div:nth-child(4), .clients__grid div:nth-child(8) {
   border-right: none;
+}
+.clients__grid div:hover img {
+  transform: scale(1.2);
+}
+
+.counter {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.6)), url("../../images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.counter__count {
+  text-align: center;
+}
+.counter h3 {
+  color: white;
+  font-size: 9rem;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+}
+.counter p {
+  color: rgba(128, 128, 128, 0.55);
+  line-height: 1.5;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 /*# sourceMappingURL=style.css.map */
