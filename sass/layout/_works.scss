@@ -1,18 +1,13 @@
 .works {
    &__gallery {
+      width: 100%;
       display: grid;
-      grid-template-columns: repeat(1fr, 4);
-      grid-template-rows: 1fr 1fr;
-      grid-template-areas:
-         "thumb-1 thumb-2 thumb-3 thumb-4"
-         "thumb-5 thumb-6 thumb-7 thumb-8";
-      grid-gap: 0;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 38rem;
    }
 
    &__thumb {
       position: relative;
-      width: 100%;
-      height: 38rem;
       overflow: hidden;
 
       .btn-sec {
@@ -71,12 +66,18 @@
 
    &__link {
       overflow: hidden;
+      display: block;
+      height: 100%;
+      width: 100%;
 
       img {
-         height: 100%;
          position: relative;
          z-index: 10;
          object-fit: cover;
+         display: block;
+         height: 100%;
+         width: 100%;
+         object-position: center;
       }
 
       &::before {

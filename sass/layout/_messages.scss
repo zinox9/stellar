@@ -1,0 +1,64 @@
+.messages {
+   h3 {
+      font-size: 3.5rem;
+      text-align: center;
+      width: 100%;
+   }
+
+   &__slider {
+      margin: 8rem 5rem;
+      display: flex;
+      overflow: hidden;
+   }
+
+   &__message {
+      min-width: 43.5rem;
+      margin-right: 14rem;
+      position: relative;
+      &-icon {
+         object-fit: cover;
+         object-position: center;
+         width: auto;
+         height: 3rem;
+         display: inline-block;
+         position: absolute;
+         left: 0;
+         top: 0;
+      }
+
+      p {
+         position: relative;
+         width: 100%;
+         margin-left: 15%;
+         font-size: 1.8rem;
+         line-height: 2;
+         color: $color-grey;
+      }
+
+      &-author {
+         position: relative;
+         display: flex;
+         margin-top: 5%;
+         margin-left: 17%;
+
+         img {
+            width: 7.5rem;
+            height: auto;
+            border-radius: 100%;
+            position: relative;
+         }
+
+         div {
+            h4 {
+               margin-top: 2rem;
+               margin-left: 2rem;
+               font-size: 1.6rem;
+            }
+            p {
+               font-size: 1.4rem;
+               margin-left: 2rem;
+            }
+         }
+      }
+   }
+}
