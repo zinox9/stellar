@@ -116,6 +116,19 @@ body {
   color: gray;
 }
 
+.container {
+  width: 90%;
+  height: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-container {
+  padding: 17rem 10rem;
+  overflow: hidden;
+}
+
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../../images/hero-bg.jpg");
   background-size: cover;
@@ -362,19 +375,6 @@ body {
   line-height: 2;
 }
 
-.container {
-  width: 90%;
-  height: 100%;
-  max-width: 1366px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.section-container {
-  padding: 17rem 10rem;
-  overflow: hidden;
-}
-
 .works__gallery {
   width: 100%;
   display: grid;
@@ -521,7 +521,7 @@ body {
   margin-left: 15%;
   font-size: 1.8rem;
   line-height: 2;
-  color: gray;
+  color: rgba(42, 42, 42, 0.8);
 }
 .messages__message-author {
   position: relative;
@@ -543,6 +543,37 @@ body {
 .messages__message-author div p {
   font-size: 1.4rem;
   margin-left: 2rem;
+}
+
+.clients {
+  background-color: #2a2a2a;
+}
+.clients__grid {
+  margin: 20rem auto 0;
+  display: grid;
+  grid-template-rows: 30rem 30rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+.clients__grid div {
+  border: 1px solid rgba(128, 128, 128, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clients__grid div img {
+  width: 13rem;
+}
+.clients__grid div:nth-child(n+1):nth-child(-n+4) {
+  border-top: none;
+}
+.clients__grid div:nth-child(n+5):nth-child(-n+8) {
+  border-bottom: none;
+}
+.clients__grid div:nth-child(1), .clients__grid div:nth-child(5) {
+  border-left: none;
+}
+.clients__grid div:nth-child(4), .clients__grid div:nth-child(8) {
+  border-right: none;
 }
 
 /*# sourceMappingURL=style.css.map */

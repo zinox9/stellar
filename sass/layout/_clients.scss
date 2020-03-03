@@ -1,0 +1,39 @@
+.clients {
+   background-color: $color-lightBlack;
+
+   &__grid {
+      margin: 20rem auto 0;
+      display: grid;
+      grid-template-rows: 30rem 30rem;
+      grid-template-columns: repeat(4, 1fr);
+
+      div {
+         border: 1px solid rgba($color-grey, 0.1);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+
+         img {
+            width: 13rem;
+         }
+
+         &:nth-child(n + 1):nth-child(-n + 4) {
+            border-top: none;
+         }
+
+         &:nth-child(n + 5):nth-child(-n + 8) {
+            border-bottom: none;
+         }
+
+         &:nth-child(1),
+         &:nth-child(5) {
+            border-left: none;
+         }
+
+         &:nth-child(4),
+         &:nth-child(8) {
+            border-right: none;
+         }
+      }
+   }
+}
