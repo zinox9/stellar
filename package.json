@@ -7,10 +7,10 @@
       "last 10 versions",
       "cover 99.5%",
       "not dead"
-   ], 
+   ],
    "scripts": {
       "watch:sass": "sass --watch ./sass/main.scss ./css/style.css ",
-      "devserver": "live-server --wait=200",
+      "devserver": "live-server",
       "start": "concurrently npm:watch:sass npm:devserver",
       "compile:sass": "sass ./sass/main.scss ./css/style.comp.css",
       "prefix:css": "postcss ./css/style.comp.css --use autoprefixer -b browserslist -o ./css/style.prefix.css",

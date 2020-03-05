@@ -1,0 +1,192 @@
+.footer {
+   background-color: $color-darkGrey;
+   padding: 14rem 10rem 7rem;
+   overflow: hidden;
+
+   &__about {
+      display: flex;
+      justify-content: space-between;
+      color: $color-white;
+      margin: 17rem 13rem 17rem auto;
+
+      div {
+         font-size: 3rem;
+         line-height: 1.5;
+         // width: 40rem;
+
+         &:nth-child(1) {
+            width: 43rem;
+         }
+
+         h4 {
+            color: rgba($color-grey, 0.8);
+            font-size: 1.7rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            margin-bottom: 5rem;
+         }
+
+         a {
+            color: $color-white;
+            text-decoration: none;
+            display: block;
+         }
+      }
+   }
+
+   &__connect {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      width: 90%;
+
+      .btn-main {
+         position: relative;
+      }
+
+      &::before {
+         content: " ";
+         display: inline-block;
+         position: absolute;
+         width: 15rem;
+         top: -5rem;
+         height: 0.1rem;
+         background-color: rgba($color-grey, 0.5);
+      }
+   }
+
+   &__form {
+      color: $color-white;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      h3 {
+         color: rgba($color-grey, 0.5);
+         font-size: 1.8rem;
+         text-transform: uppercase;
+         letter-spacing: 1.5px;
+         position: absolute;
+         top: -6rem;
+      }
+
+      &-email {
+         width: 40rem;
+         height: 6rem;
+         background-color: rgba($color-black, 0.2);
+         border: none;
+         caret-color: $color-white;
+         padding: 2rem;
+         font-weight: 400;
+         color: $color-white;
+         letter-spacing: 1.2px;
+
+         font-size: 1.6rem;
+
+         &:active,
+         &:focus {
+            border: none;
+            outline: none;
+         }
+
+         &::placeholder {
+            color: rgba($color-grey, 0.5);
+            font-size: 1.6rem;
+         }
+      }
+
+      &-submit {
+         // position: absolute;
+         width: auto;
+         height: 6rem;
+         font-size: 1.3rem;
+         font-weight: 400;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+         border: none;
+         padding: 2rem;
+         background-color: $color-main;
+         color: $color-white;
+         cursor: pointer;
+
+         &:active,
+         &:focus {
+            border: none;
+            outline: none;
+         }
+      }
+   }
+
+   &__end {
+      // overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20rem;
+      position: relative;
+   }
+
+   &__copy {
+      color: rgba($color-grey, 0.5);
+      font-size: 1.5rem;
+      a {
+         color: $color-white;
+         text-decoration: none;
+      }
+
+      &::before {
+         content: " ";
+         display: inline-block;
+         position: absolute;
+         width: 100vw;
+         height: 0.1rem;
+         left: -10rem;
+         top: -1.5rem;
+         background-color: rgba($color-grey, 0.2);
+      }
+   }
+
+   &__back {
+      position: absolute;
+      top: -1.5rem;
+      right: -4rem;
+
+      div {
+         background-color: $color-black;
+         padding: 2rem 2.5rem;
+         img {
+            width: 1rem;
+            height: auto;
+         }
+      }
+
+      &::before {
+         content: " ";
+         display: inline-block;
+         position: absolute;
+         width: 11rem;
+         height: 0.1rem;
+         top: -7rem;
+         right: -2.3rem;
+         background-color: rgba($color-grey, 0.2);
+         transform: rotate(90deg);
+      }
+
+      &::after {
+         content: "Back to Top";
+         display: inline-block;
+         position: absolute;
+         text-decoration: none;
+         color: rgba($color-grey, 0.3);
+         font-size: 1.3rem;
+         letter-spacing: 1.4px;
+         text-transform: uppercase;
+         top: -21rem;
+         right: -2.3rem;
+         transform: rotate(-90deg);
+         width: 11rem;
+      }
+   }
+}

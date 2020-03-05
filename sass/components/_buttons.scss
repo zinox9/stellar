@@ -1,6 +1,6 @@
 .btn-main {
-   width: 27rem;
-   padding: 2.3rem 4rem;
+   width: max-content;
+   padding: 2.3rem 4.5rem;
    border: 2px solid $color-main;
    position: relative;
    z-index: 5;
@@ -18,10 +18,10 @@
 
    img {
       display: inline-block;
-      width: 2rem;
+      width: 1.9rem;
       height: auto;
-      position: absolute;
-      right: 4rem;
+      position: relative;
+      right: -1.2rem;
       z-index: 15;
       transition: right 0.25s ease-in;
    }
@@ -42,7 +42,7 @@
    &:hover,
    &:active {
       img {
-         right: 3rem;
+         right: -2.2rem;
       }
 
       &::before {

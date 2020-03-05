@@ -29,6 +29,16 @@
       margin-top: 5rem;
       margin-left: 11rem;
 
+      a {
+         color: $color-sec;
+         transition: color 0.2s ease-in;
+         text-decoration: none;
+
+         &:hover {
+            color: $color-main;
+         }
+      }
+
       &-main {
          font-size: 4.5rem;
          font-weight: 500;
