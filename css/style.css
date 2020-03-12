@@ -201,7 +201,7 @@ body {
 .modal__gallery img {
   position: relative;
   height: 100%;
-  width: auto;
+  width: 100%;
   opacity: 1;
   object-fit: cover;
   transition: all 0.7s ease-in;
@@ -592,11 +592,40 @@ body {
   margin: 8rem 5rem;
   display: flex;
   overflow: hidden;
+  position: relative;
+}
+.messages__slider-icons {
+  position: relative;
+  cursor: pointer;
+}
+.messages__slider-icons a {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-color: gray;
+  position: absolute;
+  border-radius: 100%;
+}
+.messages__slider-icons a.active {
+  background-color: black;
+}
+.messages__slider-icons a:nth-child(1) {
+  top: -2rem;
+  left: 48%;
+}
+.messages__slider-icons a:nth-child(2) {
+  top: -2rem;
+  left: 50%;
+}
+.messages__slider-icons a:nth-child(3) {
+  top: -2rem;
+  left: 52%;
 }
 .messages__message {
-  min-width: 43.5rem;
-  margin-right: 14rem;
+  width: 100%;
+  margin-right: 4rem;
   position: relative;
+  transition: all 0.5s cubic-bezier(0.17, 0.67, 0.13, 1.17);
 }
 .messages__message-icon {
   object-fit: cover;
@@ -610,7 +639,7 @@ body {
 }
 .messages__message p {
   position: relative;
-  width: 100%;
+  width: 43rem;
   margin-left: 15%;
   font-size: 1.8rem;
   line-height: 2;

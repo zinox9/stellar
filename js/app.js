@@ -1,9 +1,14 @@
+//=====================================
+//=============MODAL===================
+//=====================================
+
 var modalActivator = document.querySelectorAll("#item");
 var modalNumber = document.querySelector(".modal__counter");
 var modalImage = document.querySelectorAll(".modal__image");
 var modalName = document.querySelector(".modal__name");
 var modalBtnR = document.querySelector(".modal__showcase-right");
 var modalBtnL = document.querySelector(".modal__showcase-left");
+var backdrop = document.querySelector(".modal__backdrop");
 
 //----------SHOWING IMAGES & CONTENT-----------------
 var data = [
@@ -27,11 +32,15 @@ function imageShow(i) {
    modalImage[i].classList.add("active"); //for animation
 
    //translating the Image Caraousel
-   modalImage.forEach(item => {
+   modalImage.forEach(function(item) {
       item.style.transform = "translateX(-" + i * 100 + "%)";
    });
 
-   active = i;
+   function myFunction(item, index) {
+      document.getElementById("demo").innerHTML += index + ":" + item + "<br>";
+   }
+
+   active = i; // changing the active image number
 
    if (active == 7) {
       modalBtnR.style.color = "rgba(0,0,0,0)";
@@ -45,7 +54,7 @@ function imageShow(i) {
    }
 }
 
-modalActivator.forEach((item, i) => {
+modalActivator.forEach(function(item, i) {
    item.addEventListener("click", function() {
       imageShow(i);
    });
@@ -58,6 +67,7 @@ modalBtnR.addEventListener("click", function() {
 modalBtnL.addEventListener("click", function() {
    imageShow(active - 1);
 });
+
 document.addEventListener("keydown", function(e) {
    if (e.code === "ArrowRight") {
       imageShow(active + 1);
@@ -66,10 +76,39 @@ document.addEventListener("keydown", function(e) {
    }
 });
 
-var backdrop = document.querySelector(".modal__backdrop");
-
 backdrop.addEventListener("click", function() {
    location.replace(
       window.location.href.replace("#modal", "#section-works-gallery")
    );
+});
+
+//=====================================
+//=============Messages================
+//=====================================
+
+var messageButton = document.querySelectorAll("#slider-icon");
+var message = document.querySelectorAll(".messages__message");
+buttonON = 0;
+
+function scrollTo(id) {
+   message.forEach(function(item) {
+      item.style.transform = "translateX(-" + id * 106 + "%)";
+      console.log(id * 105);
+   });
+   messageButton[id].classList.add("active");
+   messageButton[buttonON].classList.remove("active");
+   buttonON = id;
+}
+
+messageButton.forEach(function(item, i) {
+   item.addEventListener("click", function() {
+      console.log("Clicked Slider", i);
+      if (i == 0) {
+         scrollTo(0);
+      } else if (i == 1) {
+         scrollTo(1);
+      } else {
+         scrollTo(2);
+      }
+   });
 });
