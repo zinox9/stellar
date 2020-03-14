@@ -1,4 +1,21 @@
 //=====================================
+//==============Onload=================
+//=====================================
+
+var overlay = document.querySelector("#overlay");
+var progressBar = document.querySelector(".overlay__progress");
+
+progressBar.style.width = "80%";
+progressBar.style.transition = "width 10s linear";
+
+window.onload = function() {
+   console.log("Adding Class");
+   overlay.classList.add("loaded");
+   progressBar.style.width = "100%";
+   progressBar.style.transition = "width 0.5s linear";
+};
+
+//=====================================
 //=============MODAL===================
 //=====================================
 
