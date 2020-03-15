@@ -65,6 +65,10 @@
       grid-template-areas:
          "heading video"
          "button button";
+      transform: translateY(15rem);
+      opacity: 0;
+
+      transition: transform 1s linear, opacity 2.5s ease;
    }
    &__heading {
       font-size: 6rem;

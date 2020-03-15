@@ -4,13 +4,15 @@
 
 var overlay = document.querySelector("#overlay");
 var progressBar = document.querySelector(".overlay__progress");
-
+var main = document.querySelector(".header__main");
 progressBar.style.width = "80%";
 
 window.onload = function() {
    overlay.classList.add("loaded");
    progressBar.style.width = "100%";
    progressBar.style.transition = "width 0.5s linear";
+   main.style.transform = "translateY(0)";
+   main.style.opacity = "1";
 };
 
 //=====================================
@@ -31,6 +33,17 @@ const links = document.querySelectorAll(".js-nav");
       });
    }
 })();
+
+//=====================================
+//===============AOS===================
+//=====================================
+
+AOS.init({
+   offset: 80,
+   duration: 500,
+   easing: "ease-in-sine",
+   delay: 50
+});
 
 //=====================================
 //=============MODAL===================
