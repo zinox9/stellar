@@ -55,34 +55,47 @@ var worksTopShift = works.offsetTop;
 var clientsTopShift = clients.offsetTop;
 var contactTopShift = contact.offsetTop;
 
+var counter = document.querySelectorAll(".counter__count h3");
+var counterOffsetTop = document.querySelector(".counter").offsetTop;
+
+current_0 = 0;
+current_1 = 0;
+current_2 = 0;
+current_3 = 0;
+
 function changeNav() {
-   //HAndling Fixed Nav
-   if (
-      window.scrollY >= nav.offsetHeight + 10 &&
-      window.scrollY >= aboutTopShift - 2
-   ) {
-      nav.style.opacity = 0;
-      head.style.opacity = 0;
-   }
-   if (window.scrollY >= aboutTopShift - 1) {
+   // HAndling Fixed Nav
+   if (window.scrollY > aboutTopShift - 50) {
       nav.classList.add("fixed");
       nav.style.opacity = 1;
       head.style.opacity = 1;
+   } else if (
+      window.scrollY <= aboutTopShift - 50 &&
+      window.scrollY >= aboutTopShift - 300
+   ) {
+      nav.style.opacity = 0;
+      head.style.opacity = 0;
    } else {
+      nav.style.opacity = 1;
+      head.style.opacity = 1;
       nav.classList.remove("fixed");
    }
 
    //Handling Highlight
    if (window.scrollY >= contactTopShift - 10) {
+      allLinks[0].classList.remove("--active");
       allLinks[4].classList.add("--active");
       allLinks[4].classList.add("--active");
    } else if (window.scrollY >= clientsTopShift - 10) {
+      allLinks[0].classList.remove("--active");
       allLinks[3].classList.remove("--active");
       allLinks[4].classList.remove("--active");
    } else if (window.scrollY >= worksTopShift - 10) {
+      allLinks[0].classList.remove("--active");
       allLinks[2].classList.remove("--active");
       allLinks[3].classList.add("--active");
    } else if (window.scrollY >= servicesTopShift - 10) {
+      allLinks[0].classList.remove("--active");
       allLinks[1].classList.remove("--active");
       allLinks[2].classList.add("--active");
       allLinks[3].classList.remove("--active");
@@ -93,6 +106,33 @@ function changeNav() {
    } else {
       allLinks[1].classList.remove("--active");
       allLinks[0].classList.add("--active");
+   }
+
+   if (window.scrollY >= counterOffsetTop - 400) {
+      setInterval(() => {
+         if (current_0 != 213) {
+            current_0 += 1;
+            counter[0].innerHTML = current_0;
+         }
+      }, 50);
+      setInterval(() => {
+         if (current_1 != 170) {
+            current_1 += 1;
+            counter[1].innerHTML = current_1;
+         }
+      }, 65);
+      setInterval(() => {
+         if (current_2 != 35) {
+            current_2 += 1;
+            counter[2].innerHTML = current_2;
+         }
+      }, 300);
+      setInterval(() => {
+         if (current_3 != 2319) {
+            current_3 += 1;
+            counter[3].innerHTML = current_3;
+         }
+      }, 5);
    }
 }
 

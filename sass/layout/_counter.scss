@@ -3,13 +3,14 @@
       url("../../images/hero-bg.jpg");
    background-size: cover;
    background-position: center;
-   padding: 10rem 15rem;
+   padding: 10rem 10rem;
    display: flex;
    justify-content: space-between;
    align-items: center;
 
    &__count {
       text-align: center;
+      width: 50%;
    }
 
    h3 {

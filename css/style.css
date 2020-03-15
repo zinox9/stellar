@@ -298,12 +298,14 @@ body {
   padding-top: 3.5rem;
 }
 .header__nav {
+  opacity: 1;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding: 2rem 0rem;
   width: 100%;
-  transition: all 0.5s ease;
+  background-color: transparent;
+  transition: all 0.7s ease;
 }
 .header__nav.fixed {
   opacity: 1;
@@ -311,20 +313,20 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #000;
+  background-color: black;
   z-index: 500;
   padding: 1.4rem 0rem;
-  transition: all 0.5s ease;
+  transition: all 0.7s ease;
 }
 .header__nav.fixed .header__head {
   width: 100%;
   justify-content: space-between;
   padding: 0 10rem;
-  transition: all 1s ease;
+  transition: all 0.7s ease;
 }
 .header__head {
   display: flex;
-  transition: all 1s ease;
+  transition: all 0.7s ease;
 }
 .header__logo {
   margin-right: 7rem;
@@ -352,7 +354,7 @@ body {
   line-height: 0.4px;
   color: gray;
   text-decoration: none;
-  transition: color 0.3s ease-in;
+  transition: color 0.25s ease-in;
 }
 .header__nav-link:hover, .header__nav-link:active {
   color: white;
@@ -804,13 +806,14 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.6)), url("../../images/hero-bg.jpg");
   background-size: cover;
   background-position: center;
-  padding: 10rem 15rem;
+  padding: 10rem 10rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .counter__count {
   text-align: center;
+  width: 50%;
 }
 .counter h3 {
   color: white;
