@@ -24,7 +24,7 @@
       </div>
 
       <!---------------HEADER--------------------->
-      <header class="header">
+      <header class="header" id="header">
          <div class="container">
             <nav class="header__nav">
                <div class="header__head">
@@ -33,12 +33,30 @@
                   </a>
                   <ul class="header__nav-list">
                      <li>
-                        <a class="header__nav-link --active" href="#">Home</a>
+                        <a class="header__nav-link js-nav --active" href="#">
+                           Home
+                        </a>
                      </li>
-                     <li><a class="header__nav-link" href="#">About</a></li>
-                     <li><a class="header__nav-link" href="#">Services</a></li>
-                     <li><a class="header__nav-link" href="#">Works</a></li>
-                     <li><a class="header__nav-link" href="#">Contact</a></li>
+                     <li>
+                        <a class="header__nav-link js-nav" href="#about">
+                           About
+                        </a>
+                     </li>
+                     <li>
+                        <a class="header__nav-link js-nav" href="#services">
+                           Services
+                        </a>
+                     </li>
+                     <li>
+                        <a class="header__nav-link js-nav" href="#works">
+                           Works
+                        </a>
+                     </li>
+                     <li>
+                        <a class="header__nav-link js-nav" href="#contact">
+                           Contact
+                        </a>
+                     </li>
                   </ul>
                </div>
             </nav>
@@ -48,10 +66,10 @@
                   We provide creative solutions to turn your ideas into digital
                   reality
                </h1>
-               <div class="header__button btn-main">
+               <a class="header__button btn-main js-nav" href="#about">
                   <p>More About Us</p>
                   <img src="./images/icons/icon-arrow-right.svg" alt="->" />
-               </div>
+               </a>
                <div class="header__video">
                   <div class="header__video-logo">
                      <img src="./images/icons/icon-play.svg" alt="Play" />
@@ -83,14 +101,14 @@
                      <a href="#"><i class="fab fa-dribbble"></i></a>
                   </li>
                </ul>
-               <a href="#" class="header__scroll">Scroll</a>
+               <a href="#about" class="header__scroll js-nav">Scroll</a>
             </div>
          </div>
       </header>
 
       <!---------------ABOUT--------------------->
 
-      <section class="about">
+      <section class="about" id="about">
          <div class="section-container">
             <div class="section__heading">
                <p>01.</p>
@@ -167,7 +185,7 @@
 
       <!---------------SERVICES--------------------->
 
-      <section class="services">
+      <section class="services" id="services">
          <div class="section-container">
             <div class="section__heading">
                <p>02.</p>
@@ -259,7 +277,7 @@
 
       <!---------------WORKS--------------------->
 
-      <section class="works">
+      <section class="works" id="works">
          <div class="section-container">
             <div class="section__heading">
                <p>03.</p>
@@ -537,7 +555,7 @@
       </div>
 
       <!---------------FOOTER--------------------->
-      <footer class="footer">
+      <footer class="footer" id="contact">
          <div class="section__heading">
             <p>05.</p>
             <p>Get in Touch</p>
@@ -571,7 +589,7 @@
             </div>
          </div>
          <div class="footer__connect">
-            <a href="#" class="btn-main">
+            <a href="#about" class="btn-main js-nav">
                <p>Let’s Talk</p>
                <img src="./images/icons/icon-arrow-right.svg" alt="->" />
             </a>
@@ -597,7 +615,7 @@
                Template By <a href="https://colorlib.com">Colorlib</a> | Made
                with <i class="fas fa-heart"></i> by Arjun
             </div>
-            <a href="#" class="footer__back">
+            <a href="#header" class="footer__back js-nav">
                <div>
                   <img src="./images/icons/icon-arrow-up.svg" alt="Up" />
                </div>
@@ -674,6 +692,7 @@
             </div>
          </div>
       </div>
+      <script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.18/scrolls.min.js"></script>
       <script src="./js/app.js"></script>
    </body>
 </html>

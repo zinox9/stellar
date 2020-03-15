@@ -24,9 +24,10 @@
    background-color: #222222;
    z-index: 1000;
 
-   transition: all 0.5s 0.6s ease-out;
+   transition: opacity 0.5s 0.6s ease-out, width 0.2s 1s ease-out;
 
    &.loaded {
+      width: 0;
       opacity: 0;
    }
 
@@ -38,6 +39,7 @@
       height: 0.4rem;
       background-color: $color-main;
       z-index: 1001;
+      transition: width 10s linear;
    }
 
    &__loader {

@@ -6,14 +6,31 @@ var overlay = document.querySelector("#overlay");
 var progressBar = document.querySelector(".overlay__progress");
 
 progressBar.style.width = "80%";
-progressBar.style.transition = "width 10s linear";
 
 window.onload = function() {
-   console.log("Adding Class");
    overlay.classList.add("loaded");
    progressBar.style.width = "100%";
    progressBar.style.transition = "width 0.5s linear";
 };
+
+//=====================================
+//=========Smooth Scroll===============
+//=====================================
+
+const links = document.querySelectorAll(".js-nav");
+
+(function() {
+   if (links) {
+      links.forEach(link => {
+         const section = link.getAttribute("href").replace("#", "");
+
+         link.addEventListener("click", function(e) {
+            e.preventDefault();
+            scrolls("#" + section);
+         });
+      });
+   }
+})();
 
 //=====================================
 //=============MODAL===================
@@ -107,7 +124,7 @@ var messageButton = document.querySelectorAll("#slider-icon");
 var message = document.querySelectorAll(".messages__message");
 buttonON = 0;
 
-function scrollTo(id) {
+function scrolling(id) {
    message.forEach(function(item) {
       item.style.transform = "translateX(-" + id * 106 + "%)";
       console.log(id * 105);
@@ -121,11 +138,11 @@ messageButton.forEach(function(item, i) {
    item.addEventListener("click", function() {
       console.log("Clicked Slider", i);
       if (i == 0) {
-         scrollTo(0);
+         scrolling(0);
       } else if (i == 1) {
-         scrollTo(1);
+         scrolling(1);
       } else {
-         scrollTo(2);
+         scrolling(2);
       }
    });
 });
