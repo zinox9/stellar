@@ -11,6 +11,7 @@ html {
 body {
   box-sizing: border-box;
   font-family: Montserrat, sans-serif;
+  transition: padding-top 0.1s ease;
   /* Define project wide font family and size in body selector */
 }
 
@@ -293,17 +294,37 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 110vh;
+  height: 118vh;
+  padding-top: 3.5rem;
 }
 .header__nav {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 5.5rem 0rem;
+  padding: 2rem 0rem;
   width: 100%;
+  transition: all 0.5s ease;
+}
+.header__nav.fixed {
+  opacity: 1;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  z-index: 500;
+  padding: 1.4rem 0rem;
+  transition: all 0.5s ease;
+}
+.header__nav.fixed .header__head {
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 10rem;
+  transition: all 1s ease;
 }
 .header__head {
   display: flex;
+  transition: all 1s ease;
 }
 .header__logo {
   margin-right: 7rem;
@@ -346,6 +367,7 @@ body {
   grid-template-areas: "heading video" "button button";
   transform: translateY(15rem);
   opacity: 0;
+  padding-top: 3.5rem;
   transition: transform 1s linear, opacity 2.5s ease;
 }
 .header__heading {
@@ -537,6 +559,9 @@ body {
   line-height: 2;
 }
 
+.works {
+  overflow: hidden;
+}
 .works__gallery {
   width: 100%;
   display: grid;
@@ -652,6 +677,9 @@ body {
   color: gray;
 }
 
+.messages {
+  overflow: hidden;
+}
 .messages h3 {
   font-size: 3.5rem;
   text-align: center;

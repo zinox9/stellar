@@ -4,18 +4,40 @@
    background-size: cover;
    background-position: center;
    background-attachment: fixed;
-   height: 110vh;
+   height: 118vh;
+   padding-top: 3.5rem;
 
    &__nav {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      padding: 5.5rem 0rem;
+      padding: 2rem 0rem;
       width: 100%;
+      transition: all 0.5s ease;
+
+      &.fixed {
+         opacity: 1;
+         justify-content: center;
+         position: fixed;
+         top: 0;
+         left: 0;
+         background-color: #000;
+         z-index: 500;
+         padding: 1.4rem 0rem;
+         transition: all 0.5s ease;
+
+         .header__head {
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 10rem;
+            transition: all 1s ease;
+         }
+      }
    }
 
    &__head {
       display: flex;
+      transition: all 1s ease;
    }
 
    &__logo {
@@ -67,6 +89,7 @@
          "button button";
       transform: translateY(15rem);
       opacity: 0;
+      padding-top: 3.5rem;
 
       transition: transform 1s linear, opacity 2.5s ease;
    }

@@ -35,14 +35,78 @@ const links = document.querySelectorAll(".js-nav");
 })();
 
 //=====================================
+//=============ONSCROLL NAV============
+//=====================================
+
+var nav = document.querySelector(".header__nav");
+var head = document.querySelector(".header__head");
+
+var about = document.querySelector(".about");
+var services = document.querySelector(".services");
+var works = document.querySelector(".works");
+var clients = document.querySelector(".clients");
+var contact = document.querySelector("#contact");
+
+var allLinks = document.querySelectorAll(".header__nav-list li a");
+
+var aboutTopShift = about.offsetTop;
+var servicesTopShift = services.offsetTop;
+var worksTopShift = works.offsetTop;
+var clientsTopShift = clients.offsetTop;
+var contactTopShift = contact.offsetTop;
+
+function changeNav() {
+   //HAndling Fixed Nav
+   if (
+      window.scrollY >= nav.offsetHeight + 10 &&
+      window.scrollY >= aboutTopShift - 2
+   ) {
+      nav.style.opacity = 0;
+      head.style.opacity = 0;
+   }
+   if (window.scrollY >= aboutTopShift - 1) {
+      nav.classList.add("fixed");
+      nav.style.opacity = 1;
+      head.style.opacity = 1;
+   } else {
+      nav.classList.remove("fixed");
+   }
+
+   //Handling Highlight
+   if (window.scrollY >= contactTopShift - 10) {
+      allLinks[4].classList.add("--active");
+      allLinks[4].classList.add("--active");
+   } else if (window.scrollY >= clientsTopShift - 10) {
+      allLinks[3].classList.remove("--active");
+      allLinks[4].classList.remove("--active");
+   } else if (window.scrollY >= worksTopShift - 10) {
+      allLinks[2].classList.remove("--active");
+      allLinks[3].classList.add("--active");
+   } else if (window.scrollY >= servicesTopShift - 10) {
+      allLinks[1].classList.remove("--active");
+      allLinks[2].classList.add("--active");
+      allLinks[3].classList.remove("--active");
+   } else if (window.scrollY >= aboutTopShift - 10) {
+      allLinks[0].classList.remove("--active");
+      allLinks[1].classList.add("--active");
+      allLinks[2].classList.remove("--active");
+   } else {
+      allLinks[1].classList.remove("--active");
+      allLinks[0].classList.add("--active");
+   }
+}
+
+window.addEventListener("scroll", changeNav);
+
+//=====================================
 //===============AOS===================
 //=====================================
 
 AOS.init({
-   offset: 80,
+   offset: 100,
    duration: 500,
    easing: "ease-in-sine",
-   delay: 50
+   delay: 100
 });
 
 //=====================================
