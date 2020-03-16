@@ -1,0 +1,57 @@
+.subscribed {
+   opacity: 1;
+   width: 40rem;
+   height: auto;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(0);
+   background-color: rgba($color-darkGrey, 1);
+   box-shadow: 0 0px 20px black;
+   border-radius: 10px;
+   color: $color-white;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 2rem;
+
+   transition: all 0.3s cubic-bezier(0, 1.08, 0.58, 1.25);
+   h3 {
+      font-size: 2rem;
+      font-weight: 400;
+      color: $color-main;
+   }
+
+   p {
+      line-height: 1.5;
+      font-size: 1.5rem;
+      padding-top: 1.7rem;
+      padding-left: 1rem;
+      padding-bottom: 1rem;
+      font-weight: 200;
+      align-self: center;
+   }
+
+   a {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 400;
+      text-decoration: none;
+      border-radius: 20px;
+      align-self: flex-end;
+      padding: 1rem;
+      background-color: transparent;
+      border: 1.5px solid $color-main;
+      transition: all 0.3s ease-in;
+
+      &:hover {
+         background-color: $color-main;
+         box-shadow: 5px 5px 5px black;
+      }
+   }
+
+   &.show {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+   }
+}

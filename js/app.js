@@ -263,3 +263,20 @@ messageButton.forEach(function(item, i) {
       }
    });
 });
+
+//=====================================
+//===============FORM==================
+//=====================================
+
+var subscribed = document.querySelector(".subscribed");
+var subscribedClose = document.querySelector(".subscribed a");
+
+document.getElementById("form").addEventListener("submit", function(evt) {
+   evt.preventDefault();
+   subscribed.classList.add("show");
+});
+function showBox() {}
+
+subscribedClose.addEventListener("click", function() {
+   subscribed.classList.remove("show");
+});
