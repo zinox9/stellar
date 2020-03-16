@@ -4,15 +4,16 @@
 
 var overlay = document.querySelector("#overlay");
 var progressBar = document.querySelector(".overlay__progress");
-var main = document.querySelector(".header__main");
+var mainHeader = document.querySelector(".header__main");
 progressBar.style.width = "80%";
 
 window.onload = function() {
+   //Removing Overlay and Animationg Header onload
    overlay.classList.add("loaded");
    progressBar.style.width = "100%";
    progressBar.style.transition = "width 0.5s linear";
-   main.style.transform = "translateY(0)";
-   main.style.opacity = "1";
+   mainHeader.style.transform = "translateY(0)";
+   mainHeader.style.opacity = "1";
 };
 
 //=====================================
@@ -20,6 +21,8 @@ window.onload = function() {
 //=====================================
 
 const links = document.querySelectorAll(".js-nav");
+
+//adding smooth scroll to all links on the page having class 'js-nav'
 
 (function() {
    if (links) {
@@ -35,12 +38,14 @@ const links = document.querySelectorAll(".js-nav");
 })();
 
 //=====================================
-//=============ONSCROLL NAV============
+//===========ONSCROLL Events===========
 //=====================================
 
+//For Fixed Nav
 var nav = document.querySelector(".header__nav");
 var head = document.querySelector(".header__head");
 
+//To highlight links on Page Scroll
 var about = document.querySelector(".about");
 var services = document.querySelector(".services");
 var works = document.querySelector(".works");
@@ -55,16 +60,19 @@ var worksTopShift = works.offsetTop;
 var clientsTopShift = clients.offsetTop;
 var contactTopShift = contact.offsetTop;
 
+//For Counter Animation
 var counter = document.querySelectorAll(".counter__count h3");
 var counterOffsetTop = document.querySelector(".counter").offsetTop;
 
-current_0 = 0;
-current_1 = 0;
-current_2 = 0;
-current_3 = 0;
+counterValues = [
+   [0, 213, 50],
+   [0, 170, 65],
+   [0, 35, 300],
+   [0, 2319, 4]
+];
 
 function changeNav() {
-   // HAndling Fixed Nav
+   // Handling Fixed Nav
    if (window.scrollY > aboutTopShift - 50) {
       nav.classList.add("fixed");
       nav.style.opacity = 1;
@@ -81,58 +89,41 @@ function changeNav() {
       nav.classList.remove("fixed");
    }
 
-   //Handling Highlight
+   //Changing Active Link On Nav
    if (window.scrollY >= contactTopShift - 10) {
-      allLinks[0].classList.remove("--active");
-      allLinks[4].classList.add("--active");
-      allLinks[4].classList.add("--active");
+      changeActive(4);
    } else if (window.scrollY >= clientsTopShift - 10) {
-      allLinks[0].classList.remove("--active");
-      allLinks[3].classList.remove("--active");
-      allLinks[4].classList.remove("--active");
+      changeActive(99999);
    } else if (window.scrollY >= worksTopShift - 10) {
-      allLinks[0].classList.remove("--active");
-      allLinks[2].classList.remove("--active");
-      allLinks[3].classList.add("--active");
+      changeActive(3);
    } else if (window.scrollY >= servicesTopShift - 10) {
-      allLinks[0].classList.remove("--active");
-      allLinks[1].classList.remove("--active");
-      allLinks[2].classList.add("--active");
-      allLinks[3].classList.remove("--active");
+      changeActive(2);
    } else if (window.scrollY >= aboutTopShift - 10) {
-      allLinks[0].classList.remove("--active");
-      allLinks[1].classList.add("--active");
-      allLinks[2].classList.remove("--active");
+      changeActive(1);
    } else {
-      allLinks[1].classList.remove("--active");
-      allLinks[0].classList.add("--active");
+      changeActive(0);
    }
 
-   if (window.scrollY >= counterOffsetTop - 400) {
-      setInterval(() => {
-         if (current_0 != 213) {
-            current_0 += 1;
-            counter[0].innerHTML = current_0;
+   function changeActive(active) {
+      allLinks.forEach(function(item, index) {
+         if (index != active) {
+            item.classList.remove("--active");
+         } else if (index == active) {
+            item.classList.add("--active");
          }
-      }, 50);
-      setInterval(() => {
-         if (current_1 != 170) {
-            current_1 += 1;
-            counter[1].innerHTML = current_1;
-         }
-      }, 65);
-      setInterval(() => {
-         if (current_2 != 35) {
-            current_2 += 1;
-            counter[2].innerHTML = current_2;
-         }
-      }, 300);
-      setInterval(() => {
-         if (current_3 != 2319) {
-            current_3 += 1;
-            counter[3].innerHTML = current_3;
-         }
-      }, 5);
+      });
+   }
+
+   //Animating Counter OnScroll
+   if (window.scrollY >= counterOffsetTop - 500) {
+      counter.forEach(function(item, index) {
+         setInterval(() => {
+            if (counterValues[index][0] != counterValues[index][1]) {
+               counterValues[index][0] += 1;
+               item.innerHTML = counterValues[index][0];
+            }
+         }, counterValues[index][2]);
+      });
    }
 }
 
@@ -152,6 +143,8 @@ AOS.init({
 //=====================================
 //=============MODAL===================
 //=====================================
+
+//Gallery Modal
 
 var modalActivator = document.querySelectorAll("#item");
 var modalNumber = document.querySelector(".modal__counter");
@@ -205,6 +198,8 @@ function imageShow(i) {
    }
 }
 
+//Adding Event Listener of Click And Keys to Modal
+
 modalActivator.forEach(function(item, i) {
    item.addEventListener("click", function() {
       imageShow(i);
@@ -237,6 +232,7 @@ backdrop.addEventListener("click", function() {
 //=============Messages================
 //=====================================
 
+//Scrolling Message section Onclick
 var messageButton = document.querySelectorAll("#slider-icon");
 var message = document.querySelectorAll(".messages__message");
 buttonON = 0;
@@ -244,7 +240,6 @@ buttonON = 0;
 function scrolling(id) {
    message.forEach(function(item) {
       item.style.transform = "translateX(-" + id * 106 + "%)";
-      console.log(id * 105);
    });
    messageButton[id].classList.add("active");
    messageButton[buttonON].classList.remove("active");
@@ -253,7 +248,6 @@ function scrolling(id) {
 
 messageButton.forEach(function(item, i) {
    item.addEventListener("click", function() {
-      console.log("Clicked Slider", i);
       if (i == 0) {
          scrolling(0);
       } else if (i == 1) {
@@ -268,6 +262,7 @@ messageButton.forEach(function(item, i) {
 //===============FORM==================
 //=====================================
 
+//Showing form Modal on Submit
 var subscribed = document.querySelector(".subscribed");
 var subscribedClose = document.querySelector(".subscribed a");
 
@@ -275,7 +270,6 @@ document.getElementById("form").addEventListener("submit", function(evt) {
    evt.preventDefault();
    subscribed.classList.add("show");
 });
-function showBox() {}
 
 subscribedClose.addEventListener("click", function() {
    subscribed.classList.remove("show");

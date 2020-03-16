@@ -14,8 +14,8 @@
    flex-direction: column;
    justify-content: center;
    padding: 2rem;
+   transition: all 0.5s cubic-bezier(0.62, -0.32, 0.58, 1.44);
 
-   transition: all 0.3s cubic-bezier(0, 1.08, 0.58, 1.25);
    h3 {
       font-size: 2rem;
       font-weight: 400;
