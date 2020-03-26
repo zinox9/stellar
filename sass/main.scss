@@ -2,9 +2,12 @@
 
 @import "./base/reset";
 
+@import "./components/overlay";
 @import "./components/buttons";
 @import "./components/section";
 @import "./components/container";
+@import "./components/modal";
+@import "./components/subscribed";
 
 @import "./layout/header";
 @import "./layout/about";

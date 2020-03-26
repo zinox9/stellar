@@ -4,17 +4,28 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="./css/style.css" />
-      <link rel="stylesheet" href="./css/font-awesome/all.min.css" />
+      <link rel="stylesheet" href="./css/vendor/font-awesome.css" />
       <link
          href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Montserrat:300,400,700&display=swap"
          rel="stylesheet"
       />
+      <link rel="stylesheet" href="./css/vendor/aos.css" />
       <title>Stellar</title>
    </head>
 
    <body>
+      <!---------------Loader--------------------->
+      <div class="overlay" id="overlay">
+         <span class="overlay__progress"></span>
+         <div class="overlay__loader">
+            <span></span>
+            <span></span>
+            <span></span>
+         </div>
+      </div>
+
       <!---------------HEADER--------------------->
-      <header class="header">
+      <header class="header" id="header">
          <div class="container">
             <nav class="header__nav">
                <div class="header__head">
@@ -23,12 +34,33 @@
                   </a>
                   <ul class="header__nav-list">
                      <li>
-                        <a class="header__nav-link --active" href="#">Home</a>
+                        <a
+                           class="header__nav-link js-nav --active"
+                           href="#header"
+                        >
+                           Home
+                        </a>
                      </li>
-                     <li><a class="header__nav-link" href="#">About</a></li>
-                     <li><a class="header__nav-link" href="#">Services</a></li>
-                     <li><a class="header__nav-link" href="#">Works</a></li>
-                     <li><a class="header__nav-link" href="#">Contact</a></li>
+                     <li>
+                        <a class="header__nav-link js-nav" href="#about">
+                           About
+                        </a>
+                     </li>
+                     <li>
+                        <a class="header__nav-link js-nav" href="#services">
+                           Services
+                        </a>
+                     </li>
+                     <li>
+                        <a class="header__nav-link js-nav" href="#works">
+                           Works
+                        </a>
+                     </li>
+                     <li>
+                        <a class="header__nav-link js-nav" href="#contact">
+                           Contact
+                        </a>
+                     </li>
                   </ul>
                </div>
             </nav>
@@ -38,10 +70,10 @@
                   We provide creative solutions to turn your ideas into digital
                   reality
                </h1>
-               <div class="header__button btn-main">
+               <a class="header__button btn-main js-nav" href="#about">
                   <p>More About Us</p>
                   <img src="./images/icons/icon-arrow-right.svg" alt="->" />
-               </div>
+               </a>
                <div class="header__video">
                   <div class="header__video-logo">
                      <img src="./images/icons/icon-play.svg" alt="Play" />
@@ -73,20 +105,20 @@
                      <a href="#"><i class="fab fa-dribbble"></i></a>
                   </li>
                </ul>
-               <a href="#" class="header__scroll">Scroll</a>
+               <a href="#about" class="header__scroll js-nav">Scroll</a>
             </div>
          </div>
       </header>
 
       <!---------------ABOUT--------------------->
 
-      <section class="about">
+      <section class="about" id="about">
          <div class="section-container">
-            <div class="section__heading">
+            <div class="section__heading" data-aos="fade-right">
                <p>01.</p>
                <p>Who we are</p>
             </div>
-            <div class="section__text">
+            <div class="section__text" data-aos="fade-up">
                <h3 class="section__text-main">
                   Stellar is a branding agency based in Somewhere. We design
                   thoughtful digital experiences and beautiful brand aesthetics.
@@ -99,7 +131,7 @@
                   assumenda.
                </p>
             </div>
-            <div class="about__details">
+            <div class="about__details" data-aos="fade-up">
                <div class="about__detail">
                   <img src="./images/icons/icon-planning.svg" alt="Icon" />
                   <h4>Planning</h4>
@@ -157,13 +189,13 @@
 
       <!---------------SERVICES--------------------->
 
-      <section class="services">
+      <section class="services" id="services">
          <div class="section-container">
-            <div class="section__heading">
+            <div class="section__heading" data-aos="fade-right">
                <p>02.</p>
                <p>What we do</p>
             </div>
-            <div class="section__text">
+            <div class="section__text" data-aos="fade-up">
                <h3 class="section__text-main --invert">
                   Our services are tailored to make your business grow and stand
                   out.
@@ -176,7 +208,7 @@
                   assumenda.
                </p>
             </div>
-            <div class="services__list">
+            <div class="services__list" data-aos="fade-up">
                <div class="services__list-item">
                   <h2>01.</h2>
                   <h3>Brand Identity</h3>
@@ -249,106 +281,122 @@
 
       <!---------------WORKS--------------------->
 
-      <section class="works">
+      <section class="works" id="works">
          <div class="section-container">
-            <div class="section__heading">
+            <div class="section__heading" data-aos="fade-right">
                <p>03.</p>
                <p>RECENT WORKS</p>
             </div>
-            <div class="section__text">
+            <div class="section__text" data-aos="fade-up">
                <h3 class="section__text-main">
                   Here are some of our favorite projects we have done lately.
                   Feel free to check them out.
                </h3>
             </div>
          </div>
-         <div class="works__gallery">
-            <div class="works__thumb">
-               <a href="#" class="works__link">
+         <div class="works__gallery" id="section-works-gallery">
+            <div class="works__thumb" data-aos="zoom-in">
+               <a href="#modal" class="works__link" id="item">
                   <img src="./images/portfolio/lamp.jpg" alt="Image" />
+                  <div class="works__thumb-title">
+                     <h3>Lamp</h3>
+                     <h4>Web Design</h4>
+                  </div>
+                  <a href="https://behance.net" class="btn-sec" target="_blank">
+                     Project Link
+                  </a>
                </a>
-               <div class="works__thumb-title">
-                  <h3>Lamp</h3>
-                  <h4>Web Design</h4>
-               </div>
-               <a href="#" class="btn-sec">Project Link</a>
             </div>
-            <div class="works__thumb">
-               <a href="#" class="works__link">
+            <div class="works__thumb" data-aos="zoom-in">
+               <a href="#modal" class="works__link" id="item">
                   <img src="./images/portfolio/fuji.jpg" alt="Image" />
                </a>
                <div class="works__thumb-title">
                   <h3>Fuji</h3>
                   <h4>Branding</h4>
                </div>
-               <a href="#" class="btn-sec">Project Link</a>
+               <a href="https://behance.net" class="btn-sec" target="_blank">
+                  Project Link
+               </a>
             </div>
-            <div class="works__thumb">
-               <a href="#" class="works__link">
+            <div class="works__thumb" data-aos="zoom-in">
+               <a href="#modal" class="works__link" id="item">
                   <img src="./images/portfolio/woodcraft.jpg" alt="Image" />
                </a>
                <div class="works__thumb-title">
                   <h3>Woodcraft</h3>
                   <h4>Web Design</h4>
                </div>
-               <a href="#" class="btn-sec">Project Link</a>
+               <a href="https://behance.net" class="btn-sec" target="_blank">
+                  Project Link
+               </a>
             </div>
-            <div class="works__thumb">
-               <a href="#" class="works__link">
+            <div class="works__thumb" data-aos="zoom-in">
+               <a href="#modal" class="works__link" id="item">
                   <img src="./images/portfolio/droplet.jpg" alt="Image" />
                </a>
                <div class="works__thumb-title">
                   <h3>Droplet</h3>
                   <h4>Web Development</h4>
                </div>
-               <a href="#" class="btn-sec">Project Link</a>
+               <a href="https://behance.net" class="btn-sec" target="_blank">
+                  Project Link
+               </a>
             </div>
-            <div class="works__thumb">
-               <a href="#" class="works__link">
+            <div class="works__thumb" data-aos="zoom-in">
+               <a href="#modal" class="works__link" id="item">
                   <img src="./images/portfolio/shutterbug.jpg" alt="Image" />
                </a>
                <div class="works__thumb-title">
                   <h3>Shutterbug</h3>
                   <h4>Web Design</h4>
                </div>
-               <a href="#" class="btn-sec">Project Link</a>
+               <a href="https://behance.net" class="btn-sec" target="_blank">
+                  Project Link
+               </a>
             </div>
-            <div class="works__thumb">
-               <a href="#" class="works__link">
+            <div class="works__thumb" data-aos="zoom-in">
+               <a href="#modal" class="works__link" id="item">
                   <img src="./images/portfolio/minimalismo.jpg" alt="Image" />
                </a>
                <div class="works__thumb-title">
                   <h3>Minimalismo</h3>
                   <h4>UX Design</h4>
                </div>
-               <a href="#" class="btn-sec">Project Link</a>
+               <a href="https://behance.net" class="btn-sec" target="_blank">
+                  Project Link
+               </a>
             </div>
-            <div class="works__thumb">
-               <a href="#" class="works__link">
+            <div class="works__thumb" data-aos="zoom-in">
+               <a href="#modal" class="works__link" id="item">
                   <img src="./images/portfolio/film.jpg" alt="Image" />
                </a>
                <div class="works__thumb-title">
                   <h3>Film</h3>
                   <h4>Branding</h4>
                </div>
-               <a href="#" class="btn-sec">Project Link</a>
+               <a href="https://behance.net" class="btn-sec" target="_blank">
+                  Project Link
+               </a>
             </div>
-            <div class="works__thumb">
-               <a href="#" class="works__link">
+            <div class="works__thumb" data-aos="zoom-in">
+               <a href="#modal" class="works__link" id="item">
                   <img src="./images/portfolio/skaterboy.jpg" alt="Image" />
                </a>
                <div class="works__thumb-title">
                   <h3>Skaterboy</h3>
                   <h4>Web Design</h4>
                </div>
-               <a href="#" class="btn-sec">Project Link</a>
+               <a href="https://behance.net" class="btn-sec" target="_blank">
+                  Project Link
+               </a>
             </div>
          </div>
       </section>
 
       <!---------------MESSAGES--------------------->
       <div class="messages">
-         <div class="section-container">
+         <div class="section-container" data-aos="flip-up">
             <h3>What Clients Are Saying...</h3>
             <div class="messages__slider">
                <div class="messages__message">
@@ -440,45 +488,50 @@
                   </div>
                </div>
             </div>
+            <div class="messages__slider-icons">
+               <a class="active" id="slider-icon"></a>
+               <a id="slider-icon"></a>
+               <a id="slider-icon"></a>
+            </div>
          </div>
       </div>
 
       <!---------------CLIENTS--------------------->
       <section class="clients">
          <div class="section-container">
-            <div class="section__heading">
+            <div class="section__heading" data-aos="fade-right">
                <p>04.</p>
                <p>Selected Clients</p>
             </div>
-            <div class="section__text">
+            <div class="section__text" data-aos="fade-up">
                <h3 class="section__text-main  --invert">
                   Here are some of the brands we have had the priviledge to work
                   with.
                </h3>
             </div>
             <div class="clients__grid">
-               <div>
+               <div data-aos="zoom-in">
                   <img src="./images/clients/icon-atom.svg" alt="Atom" />
                </div>
-               <div>
+               <div data-aos="zoom-in">
                   <img src="./images/clients/icon-dropbox.svg" alt="Dropbox" />
                </div>
-               <div>
+               <div data-aos="zoom-in">
                   <img src="./images/clients/icon-firefox.svg" alt="Firefox" />
                </div>
-               <div>
+               <div data-aos="zoom-in">
                   <img src="./images/clients/icon-github.svg" alt="Github" />
                </div>
-               <div>
+               <div data-aos="zoom-in">
                   <img src="./images/clients/icon-mozilla.svg" alt="Mozilla" />
                </div>
-               <div>
+               <div data-aos="zoom-in">
                   <img src="./images/clients/icon-linux.svg" alt="Linux" />
                </div>
-               <div>
+               <div data-aos="zoom-in">
                   <img src="./images/clients/icon-ubuntu.svg" alt="Ubuntu" />
                </div>
-               <div>
+               <div data-aos="zoom-in">
                   <img src="./images/clients/icon-sass.svg" alt="Sass" />
                </div>
             </div>
@@ -487,31 +540,31 @@
 
       <!---------------COUNTER--------------------->
       <div class="counter">
-         <div class="counter__count">
+         <div class="counter__count" data-aos="fade-up">
             <h3>213</h3>
             <p>Projects Completed</p>
          </div>
-         <div class="counter__count">
+         <div class="counter__count" data-aos="fade-up">
             <h3>170</h3>
             <p>Happy Clients</p>
          </div>
-         <div class="counter__count">
+         <div class="counter__count" data-aos="fade-up">
             <h3>35</h3>
             <p>Awards Recieved</p>
          </div>
-         <div class="counter__count">
+         <div class="counter__count" data-aos="fade-up">
             <h3>2319</h3>
             <p>Cups of Coffee</p>
          </div>
       </div>
 
       <!---------------FOOTER--------------------->
-      <footer class="footer">
-         <div class="section__heading">
+      <footer class="footer" id="contact">
+         <div class="section__heading" data-aos="fade-right">
             <p>05.</p>
             <p>Get in Touch</p>
          </div>
-         <div class="section__text">
+         <div class="section__text" data-aos="fade-up">
             <h3 class="section__text-main  --invert">
                Have an idea or an epic project in mind? <br />
                Talk to us. Let’s work together and make something great. Drop us
@@ -519,7 +572,7 @@
                <a href="#">hello@stellar.com</a>
             </h3>
          </div>
-         <div class="footer__about">
+         <div class="footer__about" data-aos="fade-up">
             <div class="footer__about-add">
                <h4>WHERE TO FIND US</h4>
                <p>
@@ -539,14 +592,13 @@
                <a href="#">+197 123 9876</a>
             </div>
          </div>
-         <div class="footer__connect">
-            <a href="#" class="btn-main">
+         <div class="footer__connect" data-aos="fade-up">
+            <a href="#about" class="btn-main js-nav">
                <p>Let’s Talk</p>
                <img src="./images/icons/icon-arrow-right.svg" alt="->" />
             </a>
-            <form action="#" class="footer__form">
+            <form action="#form" class="footer__form" id="form">
                <h3>Subscribe</h3>
-               <!-- <label for="email">Email Address</label> -->
                <input
                   type="email"
                   id="email"
@@ -566,12 +618,91 @@
                Template By <a href="https://colorlib.com">Colorlib</a> | Made
                with <i class="fas fa-heart"></i> by Arjun
             </div>
-            <a href="#" class="footer__back">
+            <a href="#header" class="footer__back js-nav">
                <div>
                   <img src="./images/icons/icon-arrow-up.svg" alt="Up" />
                </div>
             </a>
          </div>
       </footer>
+
+      <!---------------MODAL--------------------->
+      <div class="modal" id="modal">
+         <div class="modal__backdrop">
+            <div class="modal__head">
+               <p class="modal__counter">1/8</p>
+               <a href="#section-works-gallery" class="modal__close">
+                  <i class="fas fa-times"></i>
+               </a>
+            </div>
+
+            <div class="modal__showcase">
+               <a href="#modal" class="modal__showcase-left">
+                  <i class="fas fa-chevron-left"></i>
+               </a>
+               <div class="modal__gallery">
+                  <img
+                     src="./images/portfolio/gallery/g-lamp.jpg"
+                     alt="Lamp Image"
+                     class="modal__image active"
+                  />
+                  <img
+                     src="./images/portfolio/gallery/g-fuji.jpg"
+                     alt="Lamp Image"
+                     class="modal__image"
+                  />
+                  <img
+                     src="./images/portfolio/gallery/g-woodcraft.jpg"
+                     alt="Lamp Image"
+                     class="modal__image"
+                  />
+                  <img
+                     src="./images/portfolio/gallery/g-droplet.jpg"
+                     alt="Lamp Image"
+                     class="modal__image"
+                  />
+                  <img
+                     src="./images/portfolio/gallery/g-shutterbug.jpg"
+                     alt="Lamp Image"
+                     class="modal__image"
+                  />
+                  <img
+                     src="./images/portfolio/gallery/g-minimalismo.jpg"
+                     alt="Lamp Image"
+                     class="modal__image"
+                  />
+                  <img
+                     src="./images/portfolio/gallery/g-film.jpg"
+                     alt="Lamp Image"
+                     class="modal__image"
+                  />
+                  <img
+                     src="./images/portfolio/gallery/g-skaterboy.jpg"
+                     alt="Lamp Image"
+                     class="modal__image"
+                  />
+               </div>
+               <a href="#modal" class="modal__showcase-right">
+                  <i class="fas fa-chevron-right"></i>
+               </a>
+            </div>
+            <div class="modal__des">
+               <h3 class="modal__name">Lamp</h3>
+               <p class="modal__caption">
+                  Vero molestiae sed aut natus excepturi. Et tempora numquam.
+                  Temporibus iusto quo.Unde dolorem corrupti neque nisi.
+               </p>
+            </div>
+         </div>
+      </div>
+
+      <div class="subscribed ">
+         <h3>Thank You !</h3>
+         <p>You have successfully subscribed to this Template Website.</p>
+         <a href="#form" class="js-nav">Awesome</a>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.18/scrolls.min.js"></script>
+      <script src="./js/vendor/aos.js"></script>
+      <script src="./js/app.js"></script>
    </body>
 </html>

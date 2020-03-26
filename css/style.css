@@ -14,6 +14,72 @@ body {
   /* Define project wide font family and size in body selector */
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    transform: translateY(-20px);
+    background-color: white;
+  }
+  100% {
+    transform: translateY(0);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+.overlay {
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #222222;
+  z-index: 1000;
+  transition: opacity 0.5s 0.6s ease-out, width 0.2s 1s ease-out;
+}
+.overlay.loaded {
+  width: 0;
+  opacity: 0;
+}
+.overlay__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0.4rem;
+  background-color: #eb6222;
+  z-index: 1001;
+  transition: width 10s linear;
+}
+.overlay__loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 5rem;
+  height: auto;
+}
+.overlay__loader span {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background-color: white;
+  margin: 35px 5px;
+}
+.overlay__loader span:nth-child(1) {
+  animation: bounce 1s cubic-bezier(0.17, 0.67, 0.91, 1.42) 0.2s infinite;
+}
+.overlay__loader span:nth-child(2) {
+  animation: bounce 1s cubic-bezier(0.17, 0.67, 0.91, 1.42) 0.1s infinite;
+}
+.overlay__loader span:nth-child(3) {
+  animation: bounce 1s cubic-bezier(0.17, 0.67, 0.91, 1.42) infinite;
+}
+
 .btn-main {
   width: max-content;
   padding: 2.3rem 4.5rem;
@@ -137,22 +203,182 @@ body {
   overflow: hidden;
 }
 
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100%;
+  color: white;
+  z-index: 500;
+  transition: all 0.2s ease-in;
+}
+.modal:target {
+  opacity: 1;
+  visibility: visible;
+}
+.modal__backdrop {
+  height: 100vh;
+  background-color: black;
+}
+.modal__head {
+  padding: 1.6rem 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 700;
+}
+.modal__counter {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 2.5px;
+}
+.modal__close {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1;
+}
+.modal__showcase {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem 10rem;
+  height: 75%;
+}
+.modal__showcase a {
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 3rem;
+}
+.modal__showcase-left {
+  color: rgba(255, 255, 255, 0);
+}
+.modal__gallery {
+  margin: auto 19rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.modal__gallery img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  object-fit: cover;
+  transition: all 0.7s ease-in;
+}
+.modal__gallery img.active {
+  transition: all 0.5s ease-in;
+}
+.modal__des {
+  text-align: center;
+  line-height: 1.5;
+}
+.modal__name {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.modal__caption {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.subscribed {
+  opacity: 1;
+  width: 40rem;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: #151515;
+  box-shadow: 0 0px 20px black;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  transition: all 0.5s cubic-bezier(0.62, -0.32, 0.58, 1.44);
+}
+.subscribed h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #eb6222;
+}
+.subscribed p {
+  line-height: 1.5;
+  font-size: 1.5rem;
+  padding-top: 1.7rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  font-weight: 200;
+  align-self: center;
+}
+.subscribed a {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 20px;
+  align-self: flex-end;
+  padding: 1rem;
+  background-color: transparent;
+  border: 1.5px solid #eb6222;
+  transition: all 0.3s ease-in;
+}
+.subscribed a:hover {
+  background-color: #eb6222;
+  box-shadow: 5px 5px 5px black;
+}
+.subscribed.show {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../../images/hero-bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 110vh;
+  height: 118vh;
+  padding-top: 3.5rem;
 }
 .header__nav {
+  opacity: 1;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 5.5rem 0rem;
+  padding: 2rem 0rem;
   width: 100%;
+  background-color: transparent;
+  transition: all 0.7s ease;
+}
+.header__nav.fixed {
+  opacity: 1;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 500;
+  padding: 1.4rem 0rem;
+  transition: all 0.7s ease;
+}
+.header__nav.fixed .header__head {
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 10rem;
+  transition: all 0.7s ease;
 }
 .header__head {
   display: flex;
+  transition: all 0.7s ease;
 }
 .header__logo {
   margin-right: 7rem;
@@ -180,7 +406,7 @@ body {
   line-height: 0.4px;
   color: gray;
   text-decoration: none;
-  transition: color 0.3s ease-in;
+  transition: color 0.25s ease-in;
 }
 .header__nav-link:hover, .header__nav-link:active {
   color: white;
@@ -193,6 +419,10 @@ body {
   margin-top: 7rem;
   grid-template-columns: 2fr 1fr;
   grid-template-areas: "heading video" "button button";
+  transform: translateY(15rem);
+  opacity: 0;
+  padding-top: 3.5rem;
+  transition: transform 1s linear, opacity 2.5s ease;
 }
 .header__heading {
   font-size: 6rem;
@@ -383,6 +613,9 @@ body {
   line-height: 2;
 }
 
+.works {
+  overflow: hidden;
+}
 .works__gallery {
   width: 100%;
   display: grid;
@@ -498,6 +731,9 @@ body {
   color: gray;
 }
 
+.messages {
+  overflow: hidden;
+}
 .messages h3 {
   font-size: 3.5rem;
   text-align: center;
@@ -507,11 +743,40 @@ body {
   margin: 8rem 5rem;
   display: flex;
   overflow: hidden;
+  position: relative;
+}
+.messages__slider-icons {
+  position: relative;
+  cursor: pointer;
+}
+.messages__slider-icons a {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-color: gray;
+  position: absolute;
+  border-radius: 100%;
+}
+.messages__slider-icons a.active {
+  background-color: black;
+}
+.messages__slider-icons a:nth-child(1) {
+  top: -2rem;
+  left: 48%;
+}
+.messages__slider-icons a:nth-child(2) {
+  top: -2rem;
+  left: 50%;
+}
+.messages__slider-icons a:nth-child(3) {
+  top: -2rem;
+  left: 52%;
 }
 .messages__message {
-  min-width: 43.5rem;
-  margin-right: 14rem;
+  width: 100%;
+  margin-right: 4rem;
   position: relative;
+  transition: all 0.5s cubic-bezier(0.17, 0.67, 0.13, 1.17);
 }
 .messages__message-icon {
   object-fit: cover;
@@ -525,7 +790,7 @@ body {
 }
 .messages__message p {
   position: relative;
-  width: 100%;
+  width: 43rem;
   margin-left: 15%;
   font-size: 1.8rem;
   line-height: 2;
@@ -593,13 +858,14 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.6)), url("../../images/hero-bg.jpg");
   background-size: cover;
   background-position: center;
-  padding: 10rem 15rem;
+  padding: 10rem 10rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .counter__count {
   text-align: center;
+  width: 50%;
 }
 .counter h3 {
   color: white;

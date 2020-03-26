@@ -1,4 +1,6 @@
 .messages {
+   overflow: hidden;
+
    h3 {
       font-size: 3.5rem;
       text-align: center;
@@ -9,12 +11,43 @@
       margin: 8rem 5rem;
       display: flex;
       overflow: hidden;
+      position: relative;
+
+      &-icons {
+         position: relative;
+         cursor: pointer;
+         a {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            background-color: $color-grey;
+            position: absolute;
+            border-radius: 100%;
+            &.active {
+               background-color: $color-black;
+            }
+         }
+
+         a:nth-child(1) {
+            top: -2rem;
+            left: 48%;
+         }
+         a:nth-child(2) {
+            top: -2rem;
+            left: 50%;
+         }
+         a:nth-child(3) {
+            top: -2rem;
+            left: 52%;
+         }
+      }
    }
 
    &__message {
-      min-width: 43.5rem;
-      margin-right: 14rem;
+      width: 100%;
+      margin-right: 4rem;
       position: relative;
+      transition: all 0.5s cubic-bezier(0.17, 0.67, 0.13, 1.17);
       &-icon {
          object-fit: cover;
          object-position: center;
@@ -28,7 +61,7 @@
 
       p {
          position: relative;
-         width: 100%;
+         width: 43rem;
          margin-left: 15%;
          font-size: 1.8rem;
          line-height: 2;
