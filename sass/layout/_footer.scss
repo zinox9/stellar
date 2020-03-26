@@ -12,7 +12,6 @@
       div {
          font-size: 3rem;
          line-height: 1.5;
-         // width: 40rem;
 
          &:nth-child(1) {
             width: 43rem;
@@ -98,7 +97,6 @@
       }
 
       &-submit {
-         // position: absolute;
          width: auto;
          height: 6rem;
          font-size: 1.3rem;
@@ -120,7 +118,6 @@
    }
 
    &__end {
-      // overflow: hidden;
       display: flex;
       justify-content: space-between;
       align-items: center;
