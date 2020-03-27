@@ -5,7 +5,22 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 10px;
+}
+@media (min-width: 1400px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media (min-width: 1700px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (min-width: 1900px) {
+  html {
+    font-size: 13px;
+  }
 }
 
 body {
@@ -82,6 +97,7 @@ body {
 
 .btn-main {
   width: max-content;
+  height: max-content;
   padding: 2.3rem 4.5rem;
   border: 2px solid #eb6222;
   position: relative;
@@ -193,7 +209,6 @@ body {
 .container {
   width: 90%;
   height: 100%;
-  max-width: 1366px;
   margin: 0 auto;
   position: relative;
 }
@@ -417,6 +432,7 @@ body {
 .header__main {
   display: grid;
   margin-top: 7rem;
+  height: 70vh;
   grid-template-columns: 2fr 1fr;
   grid-template-areas: "heading video" "button button";
   transform: translateY(15rem);
@@ -431,6 +447,11 @@ body {
   color: white;
   grid-area: heading;
   width: 90%;
+}
+@media (min-width: 1400px) {
+  .header__heading {
+    font-size: 5.7rem;
+  }
 }
 .header__video {
   grid-area: video;
@@ -743,6 +764,8 @@ body {
   margin: 8rem 5rem;
   display: flex;
   overflow: hidden;
+  flex-wrap: nowrap;
+  width: 200%;
   position: relative;
 }
 .messages__slider-icons {
@@ -773,10 +796,10 @@ body {
   left: 52%;
 }
 .messages__message {
-  width: 100%;
-  margin-right: 4rem;
+  margin-right: 10rem;
   position: relative;
-  transition: all 0.5s cubic-bezier(0.17, 0.67, 0.13, 1.17);
+  transition: all 0.5s cubic-bezier(0.17, 0.67, 0.13, 1.17), opacity 0.3s ease;
+  flex-basis: 21%;
 }
 .messages__message-icon {
   object-fit: cover;
@@ -790,7 +813,7 @@ body {
 }
 .messages__message p {
   position: relative;
-  width: 43rem;
+  width: 100%;
   margin-left: 15%;
   font-size: 1.8rem;
   line-height: 2;

@@ -4,8 +4,20 @@
    box-sizing: inherit; //from body element
 }
 html {
-   font-size: 62.5%; //defines 1rem everywhere as 10px
+   font-size: 10px; //defines 1rem everywhere as 10px
    // scroll-behavior: smooth;
+
+   @media (min-width: 1400px) {
+      font-size: 11px;
+   }
+
+   @media (min-width: 1700px) {
+      font-size: 12px;
+   }
+
+   @media (min-width: 1900px) {
+      font-size: 13px;
+   }
 }
 body {
    box-sizing: border-box;

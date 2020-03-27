@@ -11,6 +11,9 @@
       margin: 8rem 5rem;
       display: flex;
       overflow: hidden;
+      flex-wrap: nowrap;
+      width: 200%;
+      // justify-content: space-between;
       position: relative;
 
       &-icons {
@@ -44,10 +47,12 @@
    }
 
    &__message {
-      width: 100%;
-      margin-right: 4rem;
+      margin-right: 10rem;
       position: relative;
-      transition: all 0.5s cubic-bezier(0.17, 0.67, 0.13, 1.17);
+      transition: all 0.5s cubic-bezier(0.17, 0.67, 0.13, 1.17),
+         opacity 0.3s ease;
+      flex-basis: 21%;
+
       &-icon {
          object-fit: cover;
          object-position: center;
@@ -61,7 +66,7 @@
 
       p {
          position: relative;
-         width: 43rem;
+         width: 100%;
          margin-left: 15%;
          font-size: 1.8rem;
          line-height: 2;
@@ -93,5 +98,12 @@
             }
          }
       }
+
+      // @media (min-width: 1400px) {
+      //    flex-basis: 46rem;
+      // }
+      // @media (min-width: 1700px) {
+      //    flex-basis: 50rem;
+      // }
    }
 }

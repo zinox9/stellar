@@ -88,6 +88,7 @@
    &__main {
       display: grid;
       margin-top: 7rem;
+      height: 70vh;
       grid-template-columns: 2fr 1fr;
       grid-template-areas:
          "heading video"
@@ -105,6 +106,10 @@
       color: $color-white;
       grid-area: heading;
       width: 90%;
+
+      @media (min-width: 1400px) {
+         font-size: 5.7rem;
+      }
    }
 
    &__video {
