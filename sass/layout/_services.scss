@@ -13,6 +13,7 @@
    * {
       position: relative;
    }
+
    &__list {
       margin-top: 10rem;
       color: $color-white;
@@ -24,6 +25,15 @@
          "item-4 item-5 item-6";
 
       grid-gap: 4rem 4rem;
+
+      @media (max-width: 1090px) {
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 1fr 1fr 1fr;
+         grid-template-areas:
+            "item-1 item-2"
+            "item-3 item-4"
+            "item-5 item-6";
+      }
    }
 
    &__list-item {

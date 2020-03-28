@@ -47,6 +47,9 @@
       align-items: center;
       margin: 2.5rem 10rem;
       height: 75%;
+      @media (max-width: 1170px) {
+         height: 70%;
+      }
 
       a {
          color: rgba($color-white, 0.15);

@@ -115,7 +115,8 @@ function changeNav() {
    }
 
    //Animating Counter OnScroll
-   if (window.scrollY >= counterOffsetTop - 600) {
+   if (window.scrollY >= counterOffsetTop - window.innerHeight / 1.5) {
+      //window height/2 offset will work
       counter.forEach(function(item, index) {
          setInterval(() => {
             if (counterValues[index][0] != counterValues[index][1]) {

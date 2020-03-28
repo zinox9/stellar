@@ -9,6 +9,8 @@
    background-attachment: fixed;
    height: 118vh;
    padding-top: 3.5rem;
+   min-height: 80rem;
+   max-height: auto;
 
    &__nav {
       opacity: 1;
@@ -51,6 +53,12 @@
       img {
          width: 13rem;
          height: auto;
+         @media (max-width: 1300px) {
+            width: 14rem;
+         }
+         @media (max-width: 1170px) {
+            width: 15rem;
+         }
       }
    }
 
@@ -75,6 +83,13 @@
       text-decoration: none;
       transition: color 0.25s ease-in;
 
+      @media (max-width: 1300px) {
+         font-size: 1.25rem;
+      }
+      @media (max-width: 1170px) {
+         font-size: 1.35rem;
+      }
+
       &:hover,
       &:active {
          color: $color-white;
@@ -88,7 +103,6 @@
    &__main {
       display: grid;
       margin-top: 7rem;
-      height: 70vh;
       grid-template-columns: 2fr 1fr;
       grid-template-areas:
          "heading video"
@@ -98,6 +112,14 @@
       padding-top: 3.5rem;
 
       transition: transform 1s linear, opacity 2.5s ease;
+
+      @media (max-width: 1170px) {
+         margin-top: 6rem;
+         grid-template-columns: repeat(4, 1fr);
+         grid-template-areas:
+            "heading heading heading heading"
+            "button video empty empty";
+      }
    }
    &__heading {
       font-size: 6rem;
@@ -110,6 +132,12 @@
       @media (min-width: 1400px) {
          font-size: 5.7rem;
       }
+      @media (max-width: 1170px) {
+         width: 65%;
+      }
+      @media (max-width: 950px) {
+         width: 75%;
+      }
    }
 
    &__video {
@@ -121,6 +149,17 @@
       justify-content: center;
       cursor: pointer;
 
+      @media (max-width: 1170px) {
+         flex-direction: row;
+         margin-top: 4.3rem;
+         width: 100%;
+         align-items: center;
+         justify-content: center;
+      }
+      @media (max-width: 950px) {
+         margin-left: 2rem;
+      }
+
       p {
          font-weight: 800;
          text-transform: uppercase;
@@ -129,6 +168,10 @@
          line-height: 0.4px;
          color: $color-grey;
          transition: color 0.3s ease-in;
+
+         @media (max-width: 1170px) {
+            margin-left: 2rem;
+         }
       }
 
       &:hover &-logo,
@@ -156,11 +199,20 @@
       align-items: center;
       justify-content: center;
 
+      @media (max-width: 1170px) {
+         margin-bottom: 0;
+         padding: 3.8rem;
+      }
+
       transition: background-color 0.25s ease-in;
 
       img {
          width: 2.4rem;
          height: auto;
+
+         @media (max-width: 1170px) {
+            width: 2.2rem;
+         }
       }
    }
 
@@ -182,6 +234,10 @@
       font-size: 2rem;
       width: 2rem;
       list-style: none;
+
+      @media (max-width: 950px) {
+         right: 1%;
+      }
    }
 
    &__social-link {
@@ -194,6 +250,10 @@
          margin: auto;
          width: 2rem;
          color: $color-white;
+
+         @media (max-width: 950px) {
+            width: 2.5rem;
+         }
       }
 
       &:hover .header__social-text {
