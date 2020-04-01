@@ -7,7 +7,7 @@
          "detail-1 detail-2"
          "detail-3 detail-4";
       margin-top: 9rem;
-      grid-gap: 5rem;
+      grid-gap: 4rem 9rem;
    }
 
    &__detail {
@@ -28,19 +28,24 @@
          align-self: center;
          font-weight: 500;
          font-size: 2.7rem;
+         @media only screen and (max-width: 1300px) {
+            font-size: 3rem;
+         }
 
-         @media (max-width: 1090px) {
+         @media only screen and (max-width: 1090px) {
             margin-left: 2rem;
+         }
+         @media only screen and (max-width: 850px) {
+            margin-left: 4rem;
          }
       }
       p {
          margin-top: 1.7rem;
          grid-area: detail;
          font-family: "Merriweather", serif;
-         font-size: 1.8rem;
-         line-height: 1.8;
-         font-weight: 400;
-         color: rgba($color-darkGrey, 0.8);
+         font-size: 2rem;
+         line-height: 1.75;
+         color: rgba($color-black, 0.7);
       }
    }
 }

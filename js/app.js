@@ -73,12 +73,12 @@ counterValues = [
 
 function changeNav() {
    // Handling Fixed Nav
-   if (window.scrollY > aboutTopShift - 50) {
+   if (window.scrollY > aboutTopShift - 130) {
       nav.classList.add("fixed");
       nav.style.opacity = 1;
       head.style.opacity = 1;
    } else if (
-      window.scrollY <= aboutTopShift - 50 &&
+      window.scrollY <= aboutTopShift - 130 &&
       window.scrollY >= aboutTopShift - 300
    ) {
       nav.style.opacity = 0;
@@ -187,15 +187,22 @@ function imageShow(i) {
 
    active = i; // changing the active image number
 
+   function activeBtn(activate, deactivate) {
+      deactivate.style.color = "rgba(0,0,0,0)";
+      deactivate.style.backgroundColor = "rgba(0,0,0,0)";
+      activate.style.backgroundColor = "rgba(0,0,0,0.6)";
+      activate.style.color = "rgba(255, 255, 255,0.4)";
+   }
+
    if (active == 7) {
-      modalBtnR.style.color = "rgba(0,0,0,0)";
-      modalBtnL.style.color = "rgba(255, 255, 255,0.15)";
+      activeBtn(modalBtnL, modalBtnR);
    } else if (active == 0) {
-      modalBtnL.style.color = "rgba(0,0,0,0)";
-      modalBtnR.style.color = "rgba(255, 255, 255,0.15)";
+      activeBtn(modalBtnR, modalBtnL);
    } else {
-      modalBtnL.style.color = "rgba(255, 255, 255,0.15)";
-      modalBtnR.style.color = "rgba(255, 255, 255,0.15)";
+      modalBtnL.style.backgroundColor = "rgba(0,0,0,0.6)";
+      modalBtnR.style.backgroundColor = "rgba(0,0,0,0.6)";
+      modalBtnL.style.color = "rgba(255, 255, 255,0.4)";
+      modalBtnR.style.color = "rgba(255, 255, 255,0.4)";
    }
 }
 

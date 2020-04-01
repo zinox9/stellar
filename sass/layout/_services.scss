@@ -26,7 +26,16 @@
 
       grid-gap: 4rem 4rem;
 
-      @media (max-width: 1090px) {
+      @media only screen and (max-width: 1300px) {
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 1fr 1fr 1fr;
+         grid-template-areas:
+            "item-1 item-2"
+            "item-3 item-4"
+            "item-5 item-6";
+      }
+
+      @media only screen and (max-width: 1090px) {
          grid-template-columns: 1fr 1fr;
          grid-template-rows: 1fr 1fr 1fr;
          grid-template-areas:
@@ -49,10 +58,14 @@
          margin: 4rem 0 3rem 0;
       }
       p {
-         font-size: 1.7rem;
+         font-size: 1.8rem;
          font-family: "Merriweather", serif;
          color: $color-grey;
          line-height: 2;
+
+         @media only screen and (max-width: 1170px) {
+            font-size: 1.9rem;
+         }
       }
    }
 }
