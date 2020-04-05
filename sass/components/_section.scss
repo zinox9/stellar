@@ -6,6 +6,10 @@
       color: $color-main;
       letter-spacing: 1.8px;
 
+      @media only screen and (max-width: 745px) {
+         font-size: 2rem;
+      }
+
       p {
          display: inline-block;
       }
@@ -13,6 +17,9 @@
       p:first-child {
          font-weight: 700;
          font-size: 1.6rem;
+         @media only screen and (max-width: 745px) {
+            font-size: 1.9rem;
+         }
 
          &::after {
             content: " ";
@@ -28,6 +35,10 @@
    &__text {
       margin-top: 5rem;
       margin-left: 11rem;
+
+      @media only screen and (max-width: 745px) {
+         margin-left: 0;
+      }
 
       a {
          color: $color-sec;

@@ -7,9 +7,9 @@
    background-size: cover;
    background-position: center;
    background-attachment: fixed;
-   height: 800px;
-   min-height: 100vh;
-   padding-top: 3.5rem;
+   height: 100vh;
+   min-height: 90rem;
+   z-index: 1;
 
    &__nav {
       opacity: 1;
@@ -20,6 +20,7 @@
       width: 100%;
       background-color: transparent;
       transition: all 0.7s ease;
+      z-index: 500;
 
       &.fixed {
          opacity: 1;
@@ -44,6 +45,12 @@
    &__head {
       display: flex;
       transition: all 0.7s ease;
+      position: relative;
+
+      @media only screen and (max-width: 620px) {
+         width: 100%;
+         justify-content: space-between;
+      }
    }
 
    &__logo {
@@ -54,6 +61,62 @@
          height: auto;
          @media only screen and (max-width: 1300px) {
             width: 15rem;
+         }
+         @media only screen and (max-width: 745px) {
+            width: 18rem;
+         }
+      }
+   }
+
+   &__small-nav {
+      display: none;
+      @media only screen and (max-width: 620px) {
+         display: flex;
+
+         h3 {
+            line-height: 1.6;
+            margin-left: auto;
+            font-size: 3.5rem;
+            color: $color-white;
+            text-transform: uppercase;
+            font-weight: 200;
+         }
+
+         div {
+            position: relative;
+            margin: auto 0 auto 1rem;
+
+            div {
+               width: 6.5rem;
+               height: 2px;
+               background-color: white;
+               transition: all 1s ease;
+            }
+
+            div:nth-child(1) {
+               position: absolute;
+               top: -11px;
+            }
+
+            div:nth-child(3) {
+               position: absolute;
+               bottom: -11px;
+            }
+         }
+         &:hover {
+            div {
+               div:nth-child(1) {
+                  transform: rotate(225deg);
+                  top: 0;
+               }
+               div:nth-child(2) {
+                  opacity: 0;
+               }
+               div:nth-child(3) {
+                  transform: rotate(315deg);
+                  bottom: 0;
+               }
+            }
          }
       }
    }
@@ -66,6 +129,10 @@
       align-items: center;
       li {
          margin: 0 1.2rem;
+      }
+
+      @media only screen and (max-width: 620px) {
+         display: none;
       }
    }
 
@@ -81,6 +148,9 @@
 
       @media only screen and (max-width: 1300px) {
          font-size: 1.4rem;
+      }
+      @media only screen and (max-width: 745px) {
+         font-size: 1.8rem;
       }
 
       &:hover,
@@ -104,6 +174,7 @@
          "button button";
       transform: translateY(15rem);
       opacity: 0;
+      z-index: -999;
 
       transition: transform 1s linear, opacity 2.5s ease;
 
@@ -130,8 +201,18 @@
          width: 70%;
          font-size: 6.5rem;
       }
-      @media (max-width: 960px) {
+      @media only screen and (max-width: 960px) {
          width: 75%;
+      }
+      @media only screen and (max-width: 795px) {
+         width: 80%;
+      }
+      @media only screen and (max-width: 795px) {
+         width: 95%;
+         font-size: 7.5rem;
+      }
+      @media only screen and (max-width: 690px) {
+         font-size: 6.8rem;
       }
 
       @media only screen and (min-width: 1400px) {
@@ -160,6 +241,18 @@
       @media only screen and (max-width: 850px) {
          margin-left: 2rem;
       }
+      @media only screen and (max-width: 795px) {
+         margin-left: 4rem;
+      }
+      @media only screen and (max-width: 745px) {
+         align-items: flex-start;
+         justify-content: start;
+         margin-left: 11rem;
+         margin-top: -1rem;
+      }
+      @media only screen and (max-width: 690px) {
+         margin-left: 15rem;
+      }
 
       p {
          font-weight: 800;
@@ -173,6 +266,9 @@
          @media only screen and (max-width: 1170px) {
             margin-left: 2rem;
             font-size: 1.5rem;
+         }
+         @media only screen and (max-width: 745px) {
+            display: none;
          }
       }
 
@@ -208,6 +304,9 @@
       @media only screen and (max-width: 850px) {
          padding: 3.6rem;
       }
+      @media only screen and (max-width: 745px) {
+         padding: 4.5rem;
+      }
 
       transition: background-color 0.25s ease-in;
 
@@ -217,6 +316,9 @@
 
          @media only screen and (max-width: 1170px) {
             width: 2.2rem;
+         }
+         @media only screen and (max-width: 745px) {
+            width: 2.7rem;
          }
       }
    }
@@ -239,6 +341,9 @@
       font-size: 2rem;
       width: 2rem;
       list-style: none;
+      @media only screen and (max-width: 745px) {
+         display: none;
+      }
 
       @media only screen and (max-width: 1300px) {
          margin-top: 3.5rem;
@@ -307,6 +412,9 @@
       text-transform: uppercase;
       transform: rotate(-90deg);
       cursor: pointer;
+      @media only screen and (max-width: 745px) {
+         font-size: 1.5rem;
+      }
 
       &::after {
          content: " ";
@@ -317,6 +425,10 @@
          height: 1px;
          width: 15rem;
          background-color: rgba($color-grey, 0.5);
+
+         @media only screen and (max-width: 745px) {
+            display: none;
+         }
       }
    }
 }

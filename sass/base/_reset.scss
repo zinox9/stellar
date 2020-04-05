@@ -26,6 +26,12 @@ html {
    @media only screen and (max-width: 850px) {
       font-size: 7px;
    }
+   @media only screen and (max-width: 745px) {
+      font-size: 6.5px;
+   }
+   @media only screen and (max-width: 620px) {
+      font-size: 6px;
+   }
 
    @media only screen and (min-width: 1400px) {
       font-size: 12px;

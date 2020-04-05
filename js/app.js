@@ -244,22 +244,41 @@ backdrop.addEventListener("click", function() {
 var messageButton = document.querySelectorAll("#slider-icon");
 var message = document.querySelectorAll(".messages__message");
 buttonOn = 0;
+var x = window.matchMedia("(max-width: 795px)");
+if (x.matches) {
+   message[1].style.opacity = "0";
+}
 message[2].style.opacity = "0";
 message[3].style.opacity = "0";
 
 function showMessage(id) {
-   message[id].style.opacity = "1";
-   message[id + 1].style.opacity = "1";
+   if (x.matches) {
+      message[id].style.opacity = "1";
 
-   if (id == 0) {
-      message[2].style.opacity = "0";
-      message[3].style.opacity = "0";
-   } else if (id == 1) {
-      message[0].style.opacity = "0";
-      message[3].style.opacity = "0";
+      if (id == 0) {
+         message[1].style.opacity = "0";
+         message[2].style.opacity = "0";
+      } else if (id == 1) {
+         message[0].style.opacity = "0";
+         message[2].style.opacity = "0";
+      } else {
+         message[1].style.opacity = "0";
+         message[3].style.opacity = "0";
+      }
    } else {
-      message[0].style.opacity = "0";
-      message[1].style.opacity = "0";
+      message[id].style.opacity = "1";
+      message[id + 1].style.opacity = "1";
+
+      if (id == 0) {
+         message[2].style.opacity = "0";
+         message[3].style.opacity = "0";
+      } else if (id == 1) {
+         message[0].style.opacity = "0";
+         message[3].style.opacity = "0";
+      } else {
+         message[0].style.opacity = "0";
+         message[1].style.opacity = "0";
+      }
    }
 }
 
