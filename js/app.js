@@ -65,20 +65,20 @@ var counter = document.querySelectorAll(".counter__count h3");
 var counterOffsetTop = document.querySelector(".counter").offsetTop;
 
 counterValues = [
-   [0, 213, 50],
-   [0, 170, 65],
-   [0, 35, 300],
+   [0, 213, 60],
+   [0, 170, 75],
+   [0, 35, 310],
    [0, 2319, 4]
 ];
 
 function changeNav() {
    // Handling Fixed Nav
-   if (window.scrollY > aboutTopShift - 50) {
+   if (window.scrollY > aboutTopShift - 130) {
       nav.classList.add("fixed");
       nav.style.opacity = 1;
       head.style.opacity = 1;
    } else if (
-      window.scrollY <= aboutTopShift - 50 &&
+      window.scrollY <= aboutTopShift - 130 &&
       window.scrollY >= aboutTopShift - 300
    ) {
       nav.style.opacity = 0;
@@ -115,7 +115,8 @@ function changeNav() {
    }
 
    //Animating Counter OnScroll
-   if (window.scrollY >= counterOffsetTop - 500) {
+   if (window.scrollY >= counterOffsetTop - window.innerHeight / 1.5) {
+      //window height/2 offset will work
       counter.forEach(function(item, index) {
          setInterval(() => {
             if (counterValues[index][0] != counterValues[index][1]) {
@@ -186,15 +187,22 @@ function imageShow(i) {
 
    active = i; // changing the active image number
 
+   function activeBtn(activate, deactivate) {
+      deactivate.style.color = "rgba(0,0,0,0)";
+      deactivate.style.backgroundColor = "rgba(0,0,0,0)";
+      activate.style.backgroundColor = "rgba(0,0,0,0.6)";
+      activate.style.color = "rgba(255, 255, 255,0.4)";
+   }
+
    if (active == 7) {
-      modalBtnR.style.color = "rgba(0,0,0,0)";
-      modalBtnL.style.color = "rgba(255, 255, 255,0.15)";
+      activeBtn(modalBtnL, modalBtnR);
    } else if (active == 0) {
-      modalBtnL.style.color = "rgba(0,0,0,0)";
-      modalBtnR.style.color = "rgba(255, 255, 255,0.15)";
+      activeBtn(modalBtnR, modalBtnL);
    } else {
-      modalBtnL.style.color = "rgba(255, 255, 255,0.15)";
-      modalBtnR.style.color = "rgba(255, 255, 255,0.15)";
+      modalBtnL.style.backgroundColor = "rgba(0,0,0,0.6)";
+      modalBtnR.style.backgroundColor = "rgba(0,0,0,0.6)";
+      modalBtnL.style.color = "rgba(255, 255, 255,0.4)";
+      modalBtnR.style.color = "rgba(255, 255, 255,0.4)";
    }
 }
 
@@ -235,15 +243,58 @@ backdrop.addEventListener("click", function() {
 //Scrolling Message section Onclick
 var messageButton = document.querySelectorAll("#slider-icon");
 var message = document.querySelectorAll(".messages__message");
-buttonON = 0;
+buttonOn = 0;
+var x = window.matchMedia("(max-width: 795px)");
+if (x.matches) {
+   message[1].style.opacity = "0";
+}
+message[2].style.opacity = "0";
+message[3].style.opacity = "0";
+
+function showMessage(id) {
+   if (x.matches) {
+      message[id].style.opacity = "1";
+
+      if (id == 0) {
+         message[1].style.opacity = "0";
+         message[2].style.opacity = "0";
+      } else if (id == 1) {
+         message[0].style.opacity = "0";
+         message[2].style.opacity = "0";
+      } else {
+         message[1].style.opacity = "0";
+         message[3].style.opacity = "0";
+      }
+   } else {
+      message[id].style.opacity = "1";
+      message[id + 1].style.opacity = "1";
+
+      if (id == 0) {
+         message[2].style.opacity = "0";
+         message[3].style.opacity = "0";
+      } else if (id == 1) {
+         message[0].style.opacity = "0";
+         message[3].style.opacity = "0";
+      } else {
+         message[0].style.opacity = "0";
+         message[1].style.opacity = "0";
+      }
+   }
+}
 
 function scrolling(id) {
    message.forEach(function(item) {
-      item.style.transform = "translateX(-" + id * 106 + "%)";
+      var style = window.getComputedStyle(item);
+      console.log(item.offsetWidth, style.marginRight);
+      item.style.transform =
+         "translateX(-" + id * (item.offsetWidth + 100) + "px)";
    });
+   messageButton[buttonOn].classList.remove("active");
    messageButton[id].classList.add("active");
-   messageButton[buttonON].classList.remove("active");
-   buttonON = id;
+
+   showMessage(id);
+
+   buttonOn = id;
 }
 
 messageButton.forEach(function(item, i) {

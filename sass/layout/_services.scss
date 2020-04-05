@@ -13,6 +13,7 @@
    * {
       position: relative;
    }
+
    &__list {
       margin-top: 10rem;
       color: $color-white;
@@ -24,25 +25,65 @@
          "item-4 item-5 item-6";
 
       grid-gap: 4rem 4rem;
+
+      @media only screen and (max-width: 1300px) {
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 1fr 1fr 1fr;
+         grid-template-areas:
+            "item-1 item-2"
+            "item-3 item-4"
+            "item-5 item-6";
+      }
+
+      @media only screen and (max-width: 1090px) {
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 1fr 1fr 1fr;
+         grid-template-areas:
+            "item-1 item-2"
+            "item-3 item-4"
+            "item-5 item-6";
+      }
+
+      @media only screen and (max-width: 745px) {
+         display: flex;
+         flex-direction: column;
+      }
    }
 
    &__list-item {
+      @media only screen and (max-width: 745px) {
+         margin-bottom: 5rem;
+      }
       h2 {
          font-size: 4.5rem;
          font-family: "Merriweather", serif;
          font-weight: 800;
          color: $color-main;
+         @media only screen and (max-width: 745px) {
+            font-size: 6rem;
+         }
       }
       h3 {
          font-size: 2.3rem;
          font-weight: 400;
          margin: 4rem 0 3rem 0;
+         @media only screen and (max-width: 745px) {
+            font-size: 3.3rem;
+            margin: 2rem 0 2rem 0;
+         }
       }
       p {
-         font-size: 1.7rem;
+         font-size: 1.8rem;
          font-family: "Merriweather", serif;
          color: $color-grey;
          line-height: 2;
+
+         @media only screen and (max-width: 1170px) {
+            font-size: 1.9rem;
+         }
+         @media only screen and (max-width: 745px) {
+            font-size: 2.3rem;
+         }
       }
    }
 }

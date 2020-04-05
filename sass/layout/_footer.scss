@@ -8,10 +8,24 @@
       justify-content: space-between;
       color: $color-white;
       margin: 17rem 13rem 17rem auto;
+      flex-wrap: wrap;
+
+      @media only screen and (max-width: 960px) {
+         margin: 15rem 5rem 15rem auto;
+      }
+
+      @media only screen and (max-width: 745px) {
+         margin: 12rem 4rem 12rem auto;
+         flex-direction: column;
+      }
 
       div {
          font-size: 3rem;
          line-height: 1.5;
+
+         @media only screen and (max-width: 745px) {
+            margin-top: 5rem;
+         }
 
          &:nth-child(1) {
             width: 43rem;
@@ -24,12 +38,25 @@
             font-weight: 400;
             letter-spacing: 1.5px;
             margin-bottom: 5rem;
+            @media only screen and (max-width: 960px) {
+               margin-bottom: 3rem;
+            }
+            @media only screen and (max-width: 745px) {
+               font-size: 2.2rem;
+            }
          }
 
          a {
             color: $color-white;
             text-decoration: none;
             display: block;
+         }
+
+         @media only screen and (max-width: 960px) {
+            font-size: 2.5rem;
+         }
+         @media only screen and (max-width: 745px) {
+            font-size: 3rem;
          }
       }
    }
@@ -40,6 +67,11 @@
       align-items: center;
       position: relative;
       width: 90%;
+
+      @media only screen and (max-width: 745px) {
+         flex-direction: column;
+         align-items: flex-start;
+      }
 
       .btn-main {
          position: relative;
@@ -61,6 +93,10 @@
       position: relative;
       display: flex;
       align-items: center;
+
+      @media only screen and (max-width: 745px) {
+         margin-top: 12.5rem;
+      }
 
       h3 {
          color: rgba($color-grey, 0.5);
@@ -84,6 +120,13 @@
 
          font-size: 1.6rem;
 
+         @media only screen and (max-width: 745px) {
+            width: 45rem;
+            padding: 4rem;
+            height: 8rem;
+            font-size: 2.2rem;
+         }
+
          &:active,
          &:focus {
             border: none;
@@ -93,6 +136,9 @@
          &::placeholder {
             color: rgba($color-grey, 0.5);
             font-size: 1.6rem;
+            @media only screen and (max-width: 745px) {
+               font-size: 2.2rem;
+            }
          }
       }
 
@@ -108,6 +154,11 @@
          background-color: $color-main;
          color: $color-white;
          cursor: pointer;
+
+         @media only screen and (max-width: 745px) {
+            height: 8rem;
+            font-size: 1.9rem;
+         }
 
          &:active,
          &:focus {
@@ -128,6 +179,12 @@
    &__copy {
       color: rgba($color-grey, 0.5);
       font-size: 1.5rem;
+
+      @media only screen and (max-width: 745px) {
+         font-size: 2rem;
+         margin: 10rem auto auto auto;
+      }
+
       a {
          color: $color-white;
          text-decoration: none;
@@ -150,12 +207,26 @@
       top: -1.5rem;
       right: -4rem;
 
+      @media only screen and (max-width: 745px) {
+         right: 50%;
+         transform: translateX(50%);
+      }
+
       div {
          background-color: $color-black;
          padding: 2rem 2.5rem;
+
+         @media only screen and (max-width: 745px) {
+            padding: 2.6rem 3.3rem;
+         }
+
          img {
             width: 1rem;
             height: auto;
+
+            @media only screen and (max-width: 745px) {
+               width: 1.8rem;
+            }
          }
       }
 
@@ -169,6 +240,9 @@
          right: -2.3rem;
          background-color: rgba($color-grey, 0.2);
          transform: rotate(90deg);
+         @media only screen and (max-width: 745px) {
+            display: none;
+         }
       }
 
       &::after {
@@ -184,6 +258,14 @@
          right: -2.3rem;
          transform: rotate(-90deg);
          width: 11rem;
+
+         @media only screen and (max-width: 850px) {
+            width: 13rem;
+            right: -3.2rem;
+         }
+         @media only screen and (max-width: 745px) {
+            display: none;
+         }
       }
    }
 }

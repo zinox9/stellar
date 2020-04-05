@@ -11,7 +11,12 @@
       margin: 8rem 5rem;
       display: flex;
       overflow: hidden;
+      flex-wrap: nowrap;
+      width: 200%;
       position: relative;
+      @media only screen and (max-width: 795px) {
+         width: 350%;
+      }
 
       &-icons {
          position: relative;
@@ -26,28 +31,76 @@
             &.active {
                background-color: $color-black;
             }
+
+            @media only screen and (max-width: 1090px) {
+               width: 10.5px;
+               height: 10.5px;
+            }
+            @media only screen and (max-width: 795px) {
+               width: 13px;
+               height: 13px;
+            }
+            @media only screen and (min-width: 1400px) {
+               width: 12px;
+               height: 12px;
+            }
          }
 
          a:nth-child(1) {
             top: -2rem;
             left: 48%;
+            @media only screen and (max-width: 795px) {
+               left: 45%;
+            }
          }
          a:nth-child(2) {
             top: -2rem;
             left: 50%;
+            @media only screen and (max-width: 1090px) {
+               left: 51%;
+            }
+            @media only screen and (max-width: 795px) {
+               left: 50%;
+            }
          }
          a:nth-child(3) {
             top: -2rem;
             left: 52%;
+            @media only screen and (max-width: 1090px) {
+               left: 54%;
+            }
+            @media only screen and (max-width: 795px) {
+               left: 55%;
+            }
          }
       }
    }
 
    &__message {
-      width: 100%;
-      margin-right: 4rem;
+      margin-right: 10rem;
       position: relative;
-      transition: all 0.5s cubic-bezier(0.17, 0.67, 0.13, 1.17);
+      transition: all 0.5s cubic-bezier(0.17, 0.67, 0.13, 1.17),
+         opacity 0.3s ease;
+      flex-basis: 21%;
+
+      @media only screen and (max-width: 1300px) {
+         margin-right: 12rem;
+      }
+      @media only screen and (max-width: 1170px) {
+         margin-right: 13rem;
+      }
+      @media only screen and (max-width: 960px) {
+         margin-right: 14rem;
+      }
+      @media only screen and (max-width: 850px) {
+         margin-right: 14.7rem;
+      }
+      &:nth-child(1) {
+         @media only screen and (max-width: 795px) {
+            margin-left: 9rem;
+         }
+      }
+
       &-icon {
          object-fit: cover;
          object-position: center;
@@ -61,11 +114,18 @@
 
       p {
          position: relative;
-         width: 43rem;
+         width: 100%;
          margin-left: 15%;
          font-size: 1.8rem;
          line-height: 2;
          color: rgba($color-lightBlack, 0.8);
+         @media only screen and (max-width: 960px) {
+            font-size: 1.6rem;
+         }
+         @media only screen and (max-width: 795px) {
+            margin-left: 10%;
+            font-size: 2.5rem;
+         }
       }
 
       &-author {
@@ -73,12 +133,18 @@
          display: flex;
          margin-top: 5%;
          margin-left: 17%;
+         @media only screen and (max-width: 795px) {
+            margin-left: 10%;
+         }
 
          img {
             width: 7.5rem;
             height: auto;
             border-radius: 100%;
             position: relative;
+            @media only screen and (max-width: 745px) {
+               width: 9rem;
+            }
          }
 
          div {
@@ -86,10 +152,16 @@
                margin-top: 2rem;
                margin-left: 2rem;
                font-size: 1.6rem;
+               @media only screen and (max-width: 745px) {
+                  font-size: 1.9rem;
+               }
             }
             p {
                font-size: 1.4rem;
                margin-left: 2rem;
+               @media only screen and (max-width: 745px) {
+                  font-size: 1.7rem;
+               }
             }
          }
       }

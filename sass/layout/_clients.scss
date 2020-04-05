@@ -2,11 +2,15 @@
    background-color: $color-lightBlack;
 
    &__grid {
-      // margin: 10rem auto 0;
       margin-top: 10rem;
       display: grid;
       grid-template-rows: 25rem 25rem;
       grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0;
+      @media only screen and (max-width: 745px) {
+         grid-template-rows: repeat(4, 28rem);
+         grid-template-columns: repeat(2, 1fr);
+      }
 
       div {
          border: 1px solid rgba($color-grey, 0.1);
@@ -36,6 +40,15 @@
          &:nth-child(4),
          &:nth-child(8) {
             border-right: none;
+         }
+
+         @media only screen and (max-width: 745px) {
+            &:nth-child(even) {
+               border-right: none;
+            }
+            &:nth-child(odd) {
+               border-left: none;
+            }
          }
 
          &:hover img {

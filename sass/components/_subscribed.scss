@@ -16,10 +16,18 @@
    padding: 2rem;
    transition: all 0.5s cubic-bezier(0.62, -0.32, 0.58, 1.44);
 
+   @media only screen and (max-width: 745px) {
+      width: 50rem;
+      padding: 3rem;
+   }
+
    h3 {
       font-size: 2rem;
       font-weight: 400;
       color: $color-main;
+      @media only screen and (max-width: 745px) {
+         font-size: 3.1rem;
+      }
    }
 
    p {
@@ -30,6 +38,9 @@
       padding-bottom: 1rem;
       font-weight: 200;
       align-self: center;
+      @media only screen and (max-width: 745px) {
+         font-size: 2.3rem;
+      }
    }
 
    a {
@@ -43,6 +54,10 @@
       background-color: transparent;
       border: 1.5px solid $color-main;
       transition: all 0.3s ease-in;
+      @media only screen and (max-width: 745px) {
+         font-size: 2.1rem;
+         padding: 1.6rem;
+      }
 
       &:hover {
          background-color: $color-main;

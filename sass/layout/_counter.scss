@@ -11,9 +11,24 @@
    justify-content: space-between;
    align-items: center;
 
+   @media only screen and (max-width: 745px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+         "count-1 count-2"
+         "count-3 count-4";
+      justify-items: center;
+      align-items: center;
+      grid-gap: 5rem;
+   }
+
    &__count {
       text-align: center;
       width: 50%;
+      @media only screen and (max-width: 745px) {
+         width: 100%;
+      }
    }
 
    h3 {

@@ -52,6 +52,9 @@
       align-items: center;
       width: 5rem;
       height: auto;
+      @media (max-width: 1300px) {
+         width: 7rem;
+      }
 
       & span {
          display: inline-block;
